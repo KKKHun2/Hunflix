@@ -1,13 +1,11 @@
-import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, PanInfo } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import styled from "styled-components";
 import { IGetMoviesResult } from "../api";
 import { makeImagePath } from "../utils";
 import { PathMatch, useMatch, useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
-import { useRecoilValue } from "recoil";
-// import { isMobile, slideCnt } from "../atoms";
 
 const Wrapper = styled(motion.div)`
   position: relative;
@@ -243,7 +241,7 @@ export default function Sliders({
 
 
   return (
-    <Wrapper ref={dragWrapperRef}>
+    <Wrapper>
       <Title>{title}</Title>
       <LeftArrowBtn
         className="arrow"
