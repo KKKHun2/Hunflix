@@ -1,14 +1,23 @@
-import { DefaultTheme } from "styled-components";
+import type { DefaultTheme } from 'styled-components';
 
-export const theme: DefaultTheme = {
-  red: "#E51013",
-  black: {
-    veryDark: "#141414",
-    darker: "#181818",
-    lighter: "#2F2F2F",
+export const darkTheme: DefaultTheme = {
+  color: {
+    background: '#262935',
+    neutral: '#4f4f4f',
+    point: '#AB3C30',
+    primary: '#F0FA89',
+    secondary: '#181921',
+    text: '#FFFFFF',
   },
-  white: {
-    lighter: "#fff",
-    darker: "#e5e5e5",
+};
+
+export const lightTheme: DefaultTheme = {
+  color: {
+    background: '#FFFFFF',
+    neutral: '#FFFFFF',
+    point: '#EF9994',
+    primary: '#221551',
+    secondary: '#C0C0C0',
+    text: '#000000',
   },
 };
