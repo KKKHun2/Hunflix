@@ -187,14 +187,12 @@ export default function Sliders({
 
   const toggleLeaving = (value: boolean) => {
     setLeaving(value);
-    setDragMode(value);
   };
   const changeIndex = (right: number) => {
-    // 슬라이더 버튼 및 드래그로 강제 흘러감 방지용
-    if (leaving || dragMode) return;
+
 
     if (data) {
-      toggleLeaving(true); // true 처리용 > 강제 흘러감 방지
+      toggleLeaving(true); 
       setIsRight(right);
       const totalMovies = data.results.length-1;
       //20개 리스트에서 18개만 보여주기 위해 floor처리
@@ -217,8 +215,7 @@ export default function Sliders({
   const bigMatch: PathMatch<string> | null = useMatch(
     `/${menuName}/${listType}/:id`
   );
-  const [dragMode, setDragMode] = useState(false); // 강제 드래그 오류 방지용
-  const dragWrapperRef = useRef<HTMLDivElement>(null); // 드래그 영역 부모 잡기위해 useRef사용
+
 
   /**
    * Row 컴포넌트 props
@@ -238,7 +235,7 @@ export default function Sliders({
  
 
   const onClickToArrowBtn = (right: number) => {
-    if (!leaving && !dragMode) {
+    if (!leaving) {
       changeIndex(right);
     }
   };
