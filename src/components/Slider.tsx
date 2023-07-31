@@ -11,7 +11,6 @@ const Wrapper = styled(motion.div)`
   position: relative;
   min-height: 23.9rem;
   margin-top: 3rem;
-  /* 슬라이더 돌리면서 스크롤 터짐 방지용 */
   overflow: hidden;
   :hover .arrow {
     opacity: 1;
@@ -193,19 +192,12 @@ export default function Sliders({
       toggleLeaving(true); 
       setIsRight(right);
       const totalMovies = data.results.length-1;
-      //20개 리스트에서 18개만 보여주기 위해 floor처리
-    
       const maxIndex = Math.floor(totalMovies / offset) - 1;
-
       right === 1
         ? setIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
         : setIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
     }
   };
-
-  //resize로 인해 index의 값이 엄청 커진상태에서 offset개수가 많아지면 값이 안맞는 현상 막기위해 재연산처리추가
-
-
   const navigate = useNavigate();
   const onBoxClicked = (menu: string, type: string, id: number) => {
     navigate(`/${menu}/${type}/${id}`);
