@@ -206,10 +206,6 @@ export default function Sliders({
     `/${menuName}/${listType}/:id`
   );
 
-
-  /**
-   * Row 컴포넌트 props
-   */
   const rowProps = {
     gridcnt: offset,
     custom: isRight,
