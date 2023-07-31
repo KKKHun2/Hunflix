@@ -21,13 +21,13 @@ const Overlay = styled(motion.div)`
 
 const ModalBox = styled(motion.div)`
   position: fixed;
-  top: 7rem;
+  top: 9rem;
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 65%;
+  width: 66%;
   min-width: 76.8rem;
-  height: 70%;
+  height: 75%;
   overflow: auto;
   border-radius: 1.5rem;
   background-color: ${(props) => props.theme.color.background};
@@ -39,12 +39,12 @@ const ModalBox = styled(motion.div)`
 const ModalCover = styled.div`
   position: relative;
   width: 100%;
-  height: 30rem;
+  height: 23rem;
   background-size: cover;
   background-position: center center;
   .closeModal {
     position: absolute;
-    top: 2rem;
+    top: 3rem;
     right: 2rem;
     width: 2rem;
     height: 2rem;
@@ -106,7 +106,7 @@ const ModalTextCnt = styled.div`
 `;
 
 const ModalInfo = styled.ul`
-  font-size: 1.6rem;
+  font-size: 1rem;
   line-height: 2.4rem;
   li {
     float: left;
@@ -145,14 +145,14 @@ const ModalTagLine = styled.h3`
   position: relative;
   margin-bottom: 1rem;
   padding-left: 1rem;
-  font-size: 1.4rem;
+  font-size: 1rem;
   &:before {
     content: "";
     position: absolute;
     width: 0.3rem;
     height: 1.2rem;
     left: 0;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     background-color: #ccc;
   }
@@ -162,8 +162,8 @@ const ModalTagLine = styled.h3`
 
 const ModalOverView = styled.p`
   margin-bottom: 5rem;
-  font-size: 1.4rem;
-  line-height: 1.9rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
 
 `;
 

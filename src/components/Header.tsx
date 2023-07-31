@@ -26,7 +26,7 @@ const Logo = styled(motion.svg)`
   margin-right: 50px;
   width: 95px;
   height: 25px;
-  fill: ${props => props.theme.color.primary};
+  fill: ${props => props.theme.color.neutral};
   path {
     stroke-width: 6px;
     stroke: white;
@@ -73,13 +73,14 @@ const Input = styled(motion.input)`
   cursor:pointer;
   position: absolute;
   right: 0px;
+  width:12rem;
   padding: 5px 10px;
-  padding-left: 40px;
+  padding-left: 35px;
   z-index: -1;
   color: white;
-  font-size: 16px;
+  font-size: 0.7rem;
   background-color: transparent;
-  border: 1px solid ${props => props.theme.color.point};
+  border: 1px solid ${props => props.theme.color.neutral};
 `;
 
 const DarkModeButton = styled.button`
@@ -89,7 +90,7 @@ const DarkModeButton = styled.button`
   width: fit-content;
   justify-self: end;
   margin-right: 30px;
-  background-color: ${props => props.theme.color.neutral};
+  background-color: ${props => props.theme.color.background};
   color: ${props => props.theme.color.text};
   transition: 0.2s ease;
   :hover {
@@ -179,7 +180,7 @@ function Header() {
         <Search onSubmit={handleSubmit(onValid)}>
           <motion.svg
             onClick={toggleSearch}
-            animate={{ x: searchOpen ? -185 : 0 }}
+            animate={{ x: searchOpen ? -161 : 0 }}
             transition={{ type: "linear" }}
             fill="currentColor"
             viewBox="0 0 20 20"
@@ -196,7 +197,7 @@ function Header() {
             animate={inputAnimation}
             initial={{ scaleX: 0 }}
             transition={{ type: "linear" }}
-            placeholder="Search for movie or tv show..."
+            placeholder="Search for movie or tv show !"
           />
         </Search>
       </Col>
