@@ -1,46 +1,81 @@
-# Getting Started with Create React App
+# themovieDB에서 받아온 정보들로 HunFlix 제작
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+typescript를 사용하고 router 설정,recoil을 사용해 atoms으로 저장하고 꺼내주기 
 
-## Available Scripts
+input에 required사용해서 입력안했을시 에러메시지 출력
 
-In the project directory, you can run:
+<img src="https://github.com/KKKHun2/Country_Todo/assets/105702862/70e19174-2d37-423c-a405-ed66f35b7b8b.png"  width="600" height="400"/>
 
-### `npm start`
+recoil로 상태 저장
+                                                                                                                                 
+<img src="https://github.com/KKKHun2/Country_Todo/assets/105702862/9ff7d60d-db67-4856-b04e-1071e69c71f6.png"  width="600" height="500"/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# 배포 링크
+ㅁㄴㅇㅁㄴㄴㅁㅇㅁㄴ
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# app 메인화면 (/Home)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+인기영화 첫번째 영화 배너
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3개의 슬라이드
+  상영중 영화
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  출시예정 영화
 
-### `npm run eject`
+  인기 영화 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![스크린샷 2023-06-07 오전 11 39 22](https://github.com/KKKHun2/Country_Todo/assets/105702862/a4493b42-5545-46cd-ab04-28ecbbcbc098)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# app tv show 화면(/Tv show)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+상영중인 인기 tv쇼 순위표
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+인기 tv쇼 슬라이드
 
-## Learn More
+# app 검색화면(/Search)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+키워드 검색 
+키워드 없을시 나오는 화면
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#
+<div align=center><h1>📚 FE STACKS</h1></div>
+
+<div align=left>
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white">
+
+<img src="https://img.shields.io/badge/ReactRouter-CA4245?style=for-the-badge&logo=ReactRouter&logoColor=white">
+
+<img src="https://img.shields.io/badge/TypeScript-273c75?style=for-the-badge&logo=TypeScript&logoColor=white">
+
+
+<img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white">
+
+<img src="https://img.shields.io/badge/Recoil-61DAFB?style=for-the-badge&logo=Recoil&logoColor=white">
+
+
+</div>
+
+## 커밋 규칙
+|아이콘| 설명 | 아이콘 | 설명 |
+|----|---|---|---|
+|🎨|코드의 구조/형태 개선|👷|CI 빌드 시스템 추가/수정|
+|⚡️|성능 개선| 📈|분석, 추적 코드 추가/수정|
+|🔥|코드/파일 삭제| ♻️|코드 리팩토링|
+|🐛|버그 수정|➕|의존성 추가|
+|🚑|긴급 수정|➖|의존성 제거|
+|✨|새 기능|🔧|구성 파일 추가/삭제|
+|📝|문서 추가/수정|🔨|개발 스크립트 추가/수정|
+|💄|UI/스타일 파일 추가/수정|🌐|국제화/현지화|
+|🎉|프로젝트 시작|💩|똥싼 코드|
+|✅|테스트 추가/수정|⏪|변경 내용 되돌리기|
+|🔒|보안 이슈 수정|🔀|브랜치 합병|
+|🔖|릴리즈/버전 태그|📦|컴파일된 파일 추가/수정|
+|💚|CI 빌드 수정|👽|외부 API 변화로 인한 수정|
+|📌|특정 버전 의존성 고정|🚚|리소스 이동, 이름 변경|
+|📄|라이센스 추가/수정|💡|주석 추가/수정|
+|🍻|술 취해서 쓴 코드|🗃|데이버베이스 관련 수정|
+|🔊|로그 추가/수정|🙈|.gitignore 추가/수정|
+

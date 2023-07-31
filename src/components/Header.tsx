@@ -90,7 +90,7 @@ const DarkModeButton = styled.button`
   width: fit-content;
   justify-self: end;
   margin-right: 30px;
-  background-color: ${props => props.theme.color.background};
+  background-color: ${props => props.theme.color.neutral};
   color: ${props => props.theme.color.text};
   transition: 0.2s ease;
   :hover {
