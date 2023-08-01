@@ -44,6 +44,7 @@ const Item = styled.li`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font-weight: 700;
   &:hover {
     color: ${(props) => props.theme.color.point};
   }
