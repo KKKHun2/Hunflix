@@ -25,14 +25,17 @@ const Banner = styled.div<{ bgphoto: string }>`
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
     url(${(props) => props.bgphoto});
   background-size: cover;
+  margin-top:50px;
   margin-bottom:30px;
 `;
 const Title = styled.h2`
+  margin-top: -80px;
   font-size: 68px;
 
 `;
 const Overview = styled.p`
   font-size: 30px;
+  margin-top: 20px;
   width: 50%;
 `;
 
@@ -59,6 +62,7 @@ console.log(nowPlayingMoviesList)
     getPopularMovies
   );
 
+  
   return (
     <Wrapper>
       {isLoading ? (
@@ -69,7 +73,11 @@ console.log(nowPlayingMoviesList)
             bgphoto={makeImagePath(nowPlayingMoviesList?.results[0].backdrop_path || "")}
          >
             <Title>{nowPlayingMoviesList?.results[0].title}</Title>
-            <Overview>{nowPlayingMoviesList?.results[0].overview}</Overview>
+            <Overview>
+              {(nowPlayingMoviesList && nowPlayingMoviesList?.results[0].overview.length>190)
+                ? nowPlayingMoviesList?.results[0].overview.slice(0,190)+"...."
+                : nowPlayingMoviesList?.results[0].overview}
+            </Overview>
           </Banner> 
           <SliderArea>
             <Sliders

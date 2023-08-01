@@ -14,20 +14,20 @@ const Overlay = styled(motion.div)`
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.65);
   opacity: 0;
   z-index: 99;
 `;
 
 const ModalBox = styled(motion.div)`
   position: fixed;
-  top: 9rem;
+  top: 7rem;
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 66%;
-  min-width: 76.8rem;
-  height: 75%;
+  width: 50%;
+  min-width: 60rem;
+  height: 78%;
   overflow: auto;
   border-radius: 1.5rem;
   background-color: ${(props) => props.theme.color.background};
@@ -39,7 +39,7 @@ const ModalBox = styled(motion.div)`
 const ModalCover = styled.div`
   position: relative;
   width: 100%;
-  height: 23rem;
+  height: 18rem;
   background-size: cover;
   background-position: center center;
   .closeModal {
@@ -68,18 +68,20 @@ const ModalCoverTitle = styled.div`
 
 `;
 
-const ModalTitle = styled.h3`
-  font-size: 3.6rem;
+const ModalTitle = styled.h2`
+  font-size: 3.3rem;
+  color:#eee4e4;
 `;
 
 const ModalSmallTitle = styled.h3`
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 400;
+  color:#eee4e4;
 `;
 
 const ModalContents = styled.div`
   position: relative;
-  padding: 2rem 4rem 0 4rem;
+  padding: 2rem 3rem 0 3rem;
   font-weight: 100;
 
 `;
@@ -87,7 +89,7 @@ const ModalContents = styled.div`
 const ModalImage = styled.div<{ poster_path: string | null }>`
   float: left;
   width: 30%;
-  margin-top: -17rem;
+  margin-top: -15rem;
   img {
     width: 100%;
   }
@@ -101,13 +103,14 @@ const ModalInfoTitle = styled.div`
 
 const ModalTextCnt = styled.div`
   float: left;
+  margin-top: -25px;
   width: 70%;
   padding-left: 2rem;
 `;
 
 const ModalInfo = styled.ul`
   font-size: 1rem;
-  line-height: 2.4rem;
+  line-height: 2.7rem;
   li {
     float: left;
     .rating {
@@ -124,7 +127,7 @@ const ModalInfo = styled.ul`
   }
   li ~ li {
     position: relative;
-    margin-left: 1.2rem;
+    margin-left: 1.3rem;
     padding-left: 1.2rem;
   }
   li ~ li:before {
@@ -143,7 +146,8 @@ const ModalInfo = styled.ul`
 
 const ModalTagLine = styled.h3`
   position: relative;
-  margin-bottom: 1rem;
+  margin-top: -25px;
+  margin-bottom: 0.8rem;
   padding-left: 1rem;
   font-size: 1rem;
   &:before {
@@ -161,7 +165,8 @@ const ModalTagLine = styled.h3`
 `;
 
 const ModalOverView = styled.p`
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
+  margin-top: -10px;
   font-size: 1.2rem;
   line-height: 2rem;
 
@@ -322,6 +327,7 @@ export default function Modal({
                         size={20}
                         edit={false}
                         className="rating"
+                        
                       />
                       <span className="ratingValue">
                         ({data?.vote_average.toFixed(1)})
