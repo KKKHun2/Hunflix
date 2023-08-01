@@ -26,7 +26,7 @@ const Logo = styled(motion.svg)`
   margin-right: 50px;
   width: 95px;
   height: 25px;
-  fill: ${props => props.theme.color.neutral};
+  fill: ${props => props.theme.color.point};
   path {
     stroke-width: 6px;
     stroke: white;
@@ -107,7 +107,7 @@ const logoVariants = {
     fillOpacity: 1,
   },
   active: {
-    fillOpacity: [0, 1, 0],
+    fillOpacity: [0, 1, 1,0],
     transition: {
       repeat: Infinity,
     },

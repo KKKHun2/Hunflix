@@ -25,16 +25,16 @@ const Banner = styled.div<{ bgphoto: string }>`
   margin-bottom: 30px;
 `;
 const Title = styled.div`
-  font-size: 40px;
+  font-size: 30px;
   text-align: left;
   padding: 10px;
-
+  font-weight: 350;
 `;
 
 const RankTitle = styled.div`
   font-weight: bold;
   font-size: 35px;
-  margin-top: 50px;
+  margin-top: 100px;
   color: ${(props) => props.theme.color.text};
 `;
 
@@ -45,7 +45,7 @@ const RankBox = styled.div`
   height: 450px;
   justify-content: flex-start; 
   align-items: flex-start;
-  margin-top: 30px;
+  margin-top: 15px;
   border-radius: 15px;
   font-size: 24px;
   background-color: ${(props) => props.theme.color.background};
