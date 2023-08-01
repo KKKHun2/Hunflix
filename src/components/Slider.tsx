@@ -109,6 +109,8 @@ const Info = styled(motion.div)`
   opacity: 0;
   position: absolute;
   width: 100%;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
   bottom: 0;
   h4 {
     text-align: center;
@@ -137,10 +139,14 @@ const rowVariants = {
 const boxVariants = {
   normal: {
     scale: 1,
+    borderBottomLeftRadius: "0px", 
+    borderBottomRightRadius: "0px",
   },
   hover: {
     scale: 1.3,
     y: -50,
+    borderBottomLeftRadius: "10px", 
+    borderBottomRightRadius: "10px",
     transition: {
       type: "tween",
       delay: 0.3,

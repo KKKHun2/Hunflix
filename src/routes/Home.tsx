@@ -6,7 +6,7 @@ import { makeImagePath } from "../utils";
 
 
 const Wrapper = styled.div`
-  background-color: ${props => props.theme.color.neutral};
+  background-color: ${props => props.theme.color.background};
   padding-bottom: 200px;
 `;
 const Loader = styled.div`
