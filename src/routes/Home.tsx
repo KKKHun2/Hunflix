@@ -29,14 +29,15 @@ const Banner = styled.div<{ bgphoto: string }>`
   margin-bottom:30px;
 `;
 const Title = styled.h2`
-  margin-top: -80px;
+  margin-top: -30px;
   font-size: 68px;
-
+  font-weight: 400;
 `;
 const Overview = styled.p`
   font-size: 30px;
-  margin-top: 20px;
+  margin-top: 50px;
   width: 50%;
+  font-weight: 350;
 `;
 
 const SliderArea = styled.div`
