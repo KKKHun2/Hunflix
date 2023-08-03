@@ -33,7 +33,7 @@ const Title = styled.div<{ active: boolean }>`
   font-size: 30px;
   text-align: left;
   padding: 10px;
-  font-weight: 350;
+  font-weight: 500;
   width: 100%;
   cursor: pointer;
   border-radius: 10px;
@@ -87,23 +87,27 @@ function Tv() {
   );
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % 5);
+      if (hoveredIndex === null) {
+        setActiveIndex((prevIndex) => (prevIndex + 1) % 5);
+      }
     }, 3500);
     return () => clearInterval(interval);
-  }, []);
-
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  }, [hoveredIndex]);
 
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);
+    setActiveIndex(index); // 호버 시 자동 변환을 멈추도록 추가
   };
 
   const handleMouseLeave = () => {
     setHoveredIndex(null);
+    
   };
+
 
   return (
     <Wrapper>
@@ -127,7 +131,11 @@ function Tv() {
                   onMouseEnter={() => handleMouseEnter(index)}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <Title active={activeIndex === index}>
+                 <Title
+                    active={activeIndex === index}
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     {index + 1}. {show.name}
                   </Title>
                 </RankBox>

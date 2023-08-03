@@ -112,9 +112,10 @@ const Info = styled(motion.div)`
   border-bottom-left-radius:10px;
   border-bottom-right-radius:10px;
   bottom: 0;
-  h4 {
+  div {
     text-align: center;
-    font-size: 18px;
+    font-size: 19px;
+    font-weight: 650;
   }
 `;
 
@@ -274,7 +275,7 @@ export default function Sliders({
                 }}
               >
                 <Info variants={infoVariants}>
-                  <h4>{d.title ? d.title : d.name}</h4>
+                  <div>{d.title ? d.title : d.name}</div>
                 </Info>
               </Box>
             ))}
