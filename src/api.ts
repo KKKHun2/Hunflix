@@ -10,6 +10,7 @@ export const LIST_TYPE = [
   "upcomingMovies",
   "popularMovies",
   "tvShow",
+  "getPopularWorldTvShows",
 ]
 
 interface IData {
@@ -78,12 +79,18 @@ export function getUpcomingMovies() {
 
 // TvShows
 export function getPopularTvShows() {
-  return fetch(`${BASE_PATH}/tv/popular?${TAIL_PATH}`).then((response) =>
+  return fetch(`${BASE_PATH}/discover/tv?${TAIL_PATH}&with_original_language=ko`).then((response) =>
     response.json()
   );
 }
 
-// Modal Popup getDetail Info Api
+export function getPopularWorldTvShows() {
+  return fetch(`${BASE_PATH}/discover/tv?${TAIL_PATH}`).then((response) =>
+    response.json()
+  );
+}
+
+
 export function getDetailData(requestUrl: string, movieId: number) {
   return fetch(`${BASE_PATH}/${requestUrl}/${movieId}?${TAIL_PATH}`).then(
     (response) => response.json()

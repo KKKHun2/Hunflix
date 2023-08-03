@@ -45,10 +45,6 @@ const Announcement = styled.p`
   text-align: left;
   font-size: 1.4rem;
   vertical-align: bottom;
-  @media only screen and (max-width: 680px) {
-    display: block;
-    padding: 1.8rem 0 0 0;
-  }
 `;
 
 interface ISearchForm {

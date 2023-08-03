@@ -94,7 +94,7 @@ const SearchItem = ({ keyword }: { keyword: string }) => {
     () => searchData(keyword || ""),
     { useErrorBoundary: true }
   );
-console.log(searchData)
+
   const navigate = useNavigate();
   const onBoxClicked = (menuName: string, id: number) => {
     navigate(`/search/${menuName}/${id}?keyword=${keyword}`);
@@ -102,9 +102,9 @@ console.log(searchData)
 
   return (
     <>
-      {data && data.results.length > 0 ? (
+      {data?.results && data.results.length > 0 ? ( // 수정된 부분
         <Row>
-          {data?.results.map((d) => (
+          {data.results.map((d) => (
             <Box
               layoutId={d.id + "" + d.media_type}
               key={d.id}

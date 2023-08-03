@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import Sliders from "../components/Slider";
 import styled from "styled-components";
-import { getPopularTvShows, IGetMoviesResult, LIST_TYPE } from "../api";
+import { getPopularTvShows,getPopularWorldTvShows, IGetMoviesResult, LIST_TYPE } from "../api";
 import { makeImagePath } from "../utils";
 
 const Wrapper = styled.div`
@@ -68,6 +68,13 @@ function Tv() {
     [LIST_TYPE[3], "popularTvShows"],
     getPopularTvShows
   );
+  const { data: PopularWorldTvShowsList } = useQuery<IGetMoviesResult>(
+    [LIST_TYPE[4], "PopularWorldTvShows"],
+    getPopularWorldTvShows
+  );
+
+
+  console.log(tvShowList)
 
   return (
     <Wrapper>
@@ -93,8 +100,15 @@ function Tv() {
           <SliderArea>
             <Sliders
               data={tvShowList as IGetMoviesResult}
-              title={"POPULAR TV SHOWS"}
+              title={"KOREA POPULAR TV SHOWS"}
               listType={LIST_TYPE[3]}
+              mediaType={"tv"}
+              menuName={"tv"}
+            />
+             <Sliders
+              data={PopularWorldTvShowsList as IGetMoviesResult}
+              title={"WORLDWIDE POPULAR TV SHOWS"}
+              listType={LIST_TYPE[4]}
               mediaType={"tv"}
               menuName={"tv"}
             />

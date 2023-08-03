@@ -324,7 +324,7 @@ export default function Modal({
                         color1="#E6E6E6"
                         color2="#FFCC33"
                         half
-                        size={20}
+                        size={22}
                         edit={false}
                         className="rating"
                         
