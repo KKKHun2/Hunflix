@@ -26,7 +26,7 @@ const Banner = styled.div<{ bgphoto: string }>`
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
     url(${(props) => props.bgphoto});
   background-size: cover;
-  transition: background-image 0.3s ease;
+  transition: background-image 0.2s ease;
 `;
 
 const Title = styled.div<{ active: boolean }>`
@@ -40,6 +40,8 @@ const Title = styled.div<{ active: boolean }>`
   color: ${(props) => props.theme.color.text};
   background-color: ${(props) =>
     props.active ? "rgba(255, 255, 255, 1)" : "rgba(233, 233, 233, 0.2)"};
+  color: ${(props) =>
+    props.active ? "#000000" : "rgba(255, 255, 255, 0.2)"};
 `;
 
 const RankTitle = styled.div`
@@ -113,7 +115,7 @@ function Tv() {
             bgphoto={
               hoveredIndex !== null
                 ? makeImagePath(tvShowList?.results[hoveredIndex].backdrop_path || "")
-                : makeImagePath(tvShowList?.results[1].backdrop_path || "")
+                : makeImagePath(tvShowList?.results[activeIndex].backdrop_path || "")
             }
           >
             <BannerContent>
