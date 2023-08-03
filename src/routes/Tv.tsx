@@ -94,7 +94,7 @@ function Tv() {
       if (hoveredIndex === null) {
         setActiveIndex((prevIndex) => (prevIndex + 1) % 5);
       }
-    }, 3500);
+    }, 3000);
     return () => clearInterval(interval);
   }, [hoveredIndex]);
 

@@ -30,15 +30,15 @@ const Title = styled.div`
 const ArrowBtn = styled(motion.div)`
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-80%);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
   color: #fff;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
 
   transition: all 0.3s;
   z-index: 90;
@@ -71,7 +71,7 @@ const Row = styled(motion.div)<{ gridcnt: number }>`
   grid-template-columns: repeat(6, 1fr);
   position: absolute;
   left: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 3rem;;
   width: 100%;
   clear: both;
   &:after {
