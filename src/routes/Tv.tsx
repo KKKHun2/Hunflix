@@ -3,60 +3,71 @@ import Sliders from "../components/Slider";
 import styled from "styled-components";
 import { getPopularTvShows,getPopularWorldTvShows, IGetMoviesResult, LIST_TYPE } from "../api";
 import { makeImagePath } from "../utils";
+import { useState, useEffect } from "react";
 
 const Wrapper = styled.div`
   background-color: ${(props) => props.theme.color.neutral};
   padding-bottom: 200px;
 `;
+
 const Loader = styled.div`
   height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
+
 const Banner = styled.div<{ bgphoto: string }>`
   display: flex;
+  margin-left: -50px;
   height: 80vh;
   padding: 60px;
   color: #ffffff;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
     url(${(props) => props.bgphoto});
   background-size: cover;
-  margin-bottom: 30px;
+  transition: background-image 0.3s ease;
 `;
-const Title = styled.div`
+
+const Title = styled.div<{ active: boolean }>`
   font-size: 30px;
   text-align: left;
   padding: 10px;
   font-weight: 350;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 10px;
+  color: ${(props) => props.theme.color.text};
+  background-color: ${(props) =>
+    props.active ? "rgba(255, 255, 255, 1)" : "rgba(233, 233, 233, 0.2)"};
 `;
 
 const RankTitle = styled.div`
   font-weight: bold;
-  font-size: 35px;
-  margin-top: 100px;
-  color: ${(props) => props.theme.color.text};
+  font-size: 27px;
+  margin: 15px 0px 13px -60px;
+  color: rgba(255, 255, 255, 0.8);
 `;
 
-const RankBox = styled.div`
+const RankBox = styled.div<{ index: number }>`
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   width: 330px;
-  height: 450px;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   align-items: flex-start;
-  margin-top: 15px;
   border-radius: 15px;
   font-size: 24px;
-  background-color: ${(props) => props.theme.color.background};
-  color: ${(props) => props.theme.color.text};
-  padding: 20px; /* Add some padding to create space between the text and the border */
+  padding: 10px;
 `;
 
 const BannerContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin-top: 40px;
+  border-radius: 20px;
+  height: 28rem;
 `;
 
 const SliderArea = styled.div`
@@ -73,8 +84,24 @@ function Tv() {
     getPopularWorldTvShows
   );
 
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  console.log(tvShowList)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % 5);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
+
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const handleMouseEnter = (index: number) => {
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+  };
 
   return (
     <Wrapper>
@@ -83,31 +110,40 @@ function Tv() {
       ) : (
         <>
           <Banner
-            bgphoto={makeImagePath(tvShowList?.results[1].backdrop_path || "")}
+            bgphoto={
+              hoveredIndex !== null
+                ? makeImagePath(tvShowList?.results[hoveredIndex].backdrop_path || "")
+                : makeImagePath(tvShowList?.results[1].backdrop_path || "")
+            }
           >
             <BannerContent>
-              <RankTitle>TV쇼 순위</RankTitle>
-              <RankBox>
-                {tvShowList?.results.slice(0, 5).map((show, index) => (
-                  <Title key={show.id}>
+              <RankTitle>훈플릭스 인기 콘텐츠</RankTitle>
+              {tvShowList?.results.slice(0, 5).map((show, index) => (
+                <RankBox
+                  key={show.id}
+                  index={index}
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <Title active={activeIndex === index}>
                     {index + 1}. {show.name}
                   </Title>
-                ))}
-              </RankBox>
+                </RankBox>
+              ))}
             </BannerContent>
           </Banner>
 
           <SliderArea>
             <Sliders
               data={tvShowList as IGetMoviesResult}
-              title={"KOREA POPULAR TV SHOWS"}
+              title={"한국 인기 드라마"}
               listType={LIST_TYPE[3]}
               mediaType={"tv"}
               menuName={"tv"}
             />
-             <Sliders
+           <Sliders
               data={PopularWorldTvShowsList as IGetMoviesResult}
-              title={"WORLDWIDE POPULAR TV SHOWS"}
+              title={"전체 인기 드라마"}
               listType={LIST_TYPE[4]}
               mediaType={"tv"}
               menuName={"tv"}
