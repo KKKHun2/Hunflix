@@ -10,10 +10,10 @@ export const LIST_TYPE = [
   "upcomingMovies",
   "popularMovies",
   "tvShow",
-  "getPopularWorldTvShows",
+  "PopularWorldTvShows",
 ]
 
-interface IData {
+export interface IData {
   id: number;
   backdrop_path: string;
   poster_path: string;

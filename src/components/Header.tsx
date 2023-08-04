@@ -76,12 +76,12 @@ const Input = styled(motion.input)`
 `;
 
 const DarkModeButton = styled.button`
-  border: 0;
-  padding: 10px;
+  border: 2px solid ${props => props.theme.color.text};
+  padding: 12px;
   border-radius: 50%;
   width: fit-content;
   justify-self: end;
-  margin-right: 30px;
+  margin-right: 40px;
   background-color: ${props => props.theme.color.neutral};
   color: ${props => props.theme.color.text};
   transition: 0.2s ease;
@@ -89,7 +89,7 @@ const DarkModeButton = styled.button`
     scale: 1.2;
   }
   :active {
-    scale: 0.9;
+    scale: 0.8;
   }
 `;
 
@@ -168,7 +168,7 @@ function Header() {
             animate={inputAnimation}
             initial={{ scaleX: 0 }}
             transition={{ type: "linear" }}
-            placeholder="Search for movie or tv show !"
+            placeholder="Search for movie or tv show"
           />
         </Search>
       </Col>

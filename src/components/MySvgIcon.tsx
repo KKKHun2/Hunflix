@@ -18,10 +18,12 @@ const logoVariants = {
     fillOpacity: 1,
   },
   active: {
-    fillOpacity: [0, 1, 1,0],
+    fillOpacity: [0, 1,0],
     transition: {
       repeat: Infinity,
     },
+   
+    
   },
 
 };

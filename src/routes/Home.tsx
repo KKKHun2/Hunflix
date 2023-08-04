@@ -1,8 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import Sliders from "../components/Slider";
 import styled from "styled-components";
-import { getNowPlayingMovies,getPopularMovies,getUpcomingMovies,IGetMoviesResult,LIST_TYPE, } from "../api";
+import { getNowPlayingMovies,getPopularMovies,getUpcomingMovies,IGetMoviesResult,LIST_TYPE,IData } from "../api";
 import { makeImagePath } from "../utils";
+import { AnimatePresence } from "framer-motion";
+import Modal from "../components/Modal";
+import { useState } from "react";
+import { useMatch } from "react-router-dom";
 
 
 const Wrapper = styled.div`
@@ -62,8 +66,11 @@ console.log(nowPlayingMoviesList)
     [LIST_TYPE[2], "popularMovies"],
     getPopularMovies
   );
+  const [showModal, setShowModal] = useState(false);
 
-  
+  const toggleModal = () => {
+    setShowModal((prev) => !prev);
+  };
   return (
     <Wrapper>
       {isLoading ? (
@@ -78,6 +85,8 @@ console.log(nowPlayingMoviesList)
               {(nowPlayingMoviesList && nowPlayingMoviesList?.results[0].overview.length>190)
                 ? nowPlayingMoviesList?.results[0].overview.slice(0,190)+"...."
                 : nowPlayingMoviesList?.results[0].overview}
+            {/* <button onClick={toggleModal }>123</button> */}
+               
             </Overview>
           </Banner> 
           <SliderArea>
@@ -105,6 +114,21 @@ console.log(nowPlayingMoviesList)
           </SliderArea>
         </>
       )}
+      {/* {showModal?
+      <AnimatePresence>
+        
+      <Modal
+  dataId={nowPlayingMoviesList?.results[0]?.id || 0} // id 프로퍼티를 가져와서 전달
+  listType={"coverMovie"}
+  menuName={"home"}
+  requestUrl={"movie"}
+
+/>
+        
+      </AnimatePresence>
+      :null
+        } */}
+      
     </Wrapper>
   );
 }
