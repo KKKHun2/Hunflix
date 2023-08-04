@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import Sliders from "../components/Slider";
 import styled from "styled-components";
-import { getPopularTvShows,getPopularWorldTvShows, IGetMoviesResult, LIST_TYPE } from "../api";
+import { getPopularTvShows,getPopularWorldTvShows,getTopRatedTvShows, IGetMoviesResult, LIST_TYPE } from "../api";
 import { makeImagePath } from "../utils";
 import { useState, useEffect } from "react";
 
@@ -78,12 +78,16 @@ const SliderArea = styled.div`
 
 function Tv() {
   const { data: tvShowList, isLoading } = useQuery<IGetMoviesResult>(
-    [LIST_TYPE[3], "popularTvShows"],
+    [LIST_TYPE[3], "tvShows"],
     getPopularTvShows
   );
   const { data: PopularWorldTvShowsList } = useQuery<IGetMoviesResult>(
     [LIST_TYPE[4], "PopularWorldTvShows"],
     getPopularWorldTvShows
+  );
+  const { data: PopularTopRatedTvShows } = useQuery<IGetMoviesResult>(
+    [LIST_TYPE[5], "PopularTopRatedTvShows"],
+    getTopRatedTvShows
   );
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -153,8 +157,15 @@ function Tv() {
             />
            <Sliders
               data={PopularWorldTvShowsList as IGetMoviesResult}
-              title={"전체 인기 드라마"}
+              title={"전세계 인기 드라마"}
               listType={LIST_TYPE[4]}
+              mediaType={"tv"}
+              menuName={"tv"}
+            />
+              <Sliders
+              data={PopularTopRatedTvShows as IGetMoviesResult}
+              title={"높은 평점의 TV 프로그램"}
+              listType={LIST_TYPE[5]}
               mediaType={"tv"}
               menuName={"tv"}
             />

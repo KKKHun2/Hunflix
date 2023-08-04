@@ -1,5 +1,5 @@
 
-const API_KEY = `dbf6ad83e201e98cbf498fbcfd80bf8a`;
+const API_KEY = `5f071d23e600d39b7d45ab259e41ce99`;
 const LANGUAGE = "ko-KO";
 const REGION = "KR";
 const BASE_PATH = "https://api.themoviedb.org/3";
@@ -11,6 +11,7 @@ export const LIST_TYPE = [
   "popularMovies",
   "tvShow",
   "PopularWorldTvShows",
+  "PopularTopRatedTvShows",
 ]
 
 export interface IData {
@@ -84,12 +85,18 @@ export function getPopularTvShows() {
   );
 }
 
+
+
 export function getPopularWorldTvShows() {
   return fetch(`${BASE_PATH}/discover/tv?${TAIL_PATH}`).then((response) =>
     response.json()
   );
 }
 
+export function getTopRatedTvShows() {
+  return fetch(`${BASE_PATH}/tv/top_rated?${TAIL_PATH}`).then((response)=>
+  response.json());
+}
 
 export function getDetailData(requestUrl: string, movieId: number) {
   return fetch(`${BASE_PATH}/${requestUrl}/${movieId}?${TAIL_PATH}`).then(

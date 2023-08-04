@@ -3,10 +3,8 @@ import Sliders from "../components/Slider";
 import styled from "styled-components";
 import { getNowPlayingMovies,getPopularMovies,getUpcomingMovies,IGetMoviesResult,LIST_TYPE,IData } from "../api";
 import { makeImagePath } from "../utils";
-import { AnimatePresence } from "framer-motion";
-import Modal from "../components/Modal";
 import { useState } from "react";
-import { useMatch } from "react-router-dom";
+
 
 
 const Wrapper = styled.div`
