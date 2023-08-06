@@ -20,7 +20,7 @@ const Loader = styled.div`
 const Banner = styled.div<{ bgphoto: string }>`
   display: flex;
   margin-left: -50px;
-  height: 80vh;
+  height: 70vh;
   padding: 60px;
   color: #ffffff;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
@@ -47,7 +47,7 @@ const Title = styled.div<{ active: boolean }>`
 const RankTitle = styled.div`
   font-weight: bold;
   font-size: 27px;
-  margin: 15px 0px 13px -60px;
+  margin: 24px 0px 13px -60px;
   color: rgba(255, 255, 255, 0.8);
 `;
 
@@ -67,7 +67,7 @@ const BannerContent = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.15);
-  margin-top: 40px;
+  margin-top: 60px;
   border-radius: 20px;
   height: 28rem;
 `;

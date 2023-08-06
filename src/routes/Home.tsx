@@ -3,6 +3,7 @@ import Sliders from "../components/Slider";
 import styled from "styled-components";
 import { getNowPlayingMovies,getPopularMovies,getUpcomingMovies,IGetMoviesResult,LIST_TYPE} from "../api";
 import { makeImagePath } from "../utils";
+import { useEffect, useState } from "react";
 
 const Wrapper = styled.div`
   background-color: ${props => props.theme.color.background};
@@ -15,7 +16,7 @@ const Loader = styled.div`
   align-items: center;
 `;
 const Banner = styled.div<{ bgphoto: string }>`
-  height: 80vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,11 +27,12 @@ const Banner = styled.div<{ bgphoto: string }>`
   background-size: cover;
   margin-top:50px;
   margin-bottom:30px;
+  transition: background-image 0.2s ease;
 `;
 const Title = styled.h2`
-  margin-top: -30px;
   font-size: 68px;
   font-weight: 400;
+  margin-top:150px;
 `;
 const Overview = styled.p`
   font-size: 30px;
@@ -57,6 +59,14 @@ function Home() {
     [LIST_TYPE[2], "popularMovies"],
     getPopularMovies
   );
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+        setActiveIndex((prevIndex) => (prevIndex + 1) % 5);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Wrapper>
@@ -65,13 +75,13 @@ function Home() {
       ) : (
         <>
           <Banner
-            bgphoto={makeImagePath(nowPlayingMoviesList?.results[0].backdrop_path || "")}
+            bgphoto={makeImagePath(nowPlayingMoviesList?.results[activeIndex].backdrop_path || "")}
          >
-            <Title>{nowPlayingMoviesList?.results[0].title}</Title>
+            <Title>{nowPlayingMoviesList?.results[activeIndex].title}</Title>
             <Overview>
-              {(nowPlayingMoviesList && nowPlayingMoviesList?.results[0].overview.length>190)
-                ? nowPlayingMoviesList?.results[0].overview.slice(0,190)+"...."
-                : nowPlayingMoviesList?.results[0].overview}               
+              {(nowPlayingMoviesList && nowPlayingMoviesList?.results[activeIndex].overview.length>190)
+                ? nowPlayingMoviesList?.results[activeIndex].overview.slice(0,190)+"...."
+                : nowPlayingMoviesList?.results[activeIndex].overview}               
             </Overview>
           </Banner> 
           <SliderArea>
