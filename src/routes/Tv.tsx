@@ -146,7 +146,6 @@ function Tv() {
               ))}
             </BannerContent>
           </Banner>
-
           <SliderArea>
             <Sliders
               data={tvShowList as IGetMoviesResult}
