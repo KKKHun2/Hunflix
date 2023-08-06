@@ -336,7 +336,6 @@ export default function Modal({
                   ) : null}
                 </ModalInfo>
                 <ModalCategory>
-                  {/* 줄거리 */}
                   <ModalItem>
                     {data?.tagline ? (
                       <ModalTagLine>{data?.tagline}</ModalTagLine>
@@ -347,8 +346,6 @@ export default function Modal({
                         : data?.overview}
                     </ModalOverView>
                   </ModalItem>
-
-                  {/* tv - 송출 방송사 및 vod사 */}
                   {data?.networks && data?.networks.length > 0 ? (
                     <>
                       <ModalItem>

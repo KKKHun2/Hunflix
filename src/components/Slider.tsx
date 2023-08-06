@@ -223,17 +223,11 @@ export default function Sliders({
     transition: { type: "tween", duration: 1 },
     key: index,
   };
-
- 
- 
-
   const onClickToArrowBtn = (right: number) => {
     if (!leaving) {
       changeIndex(right);
     }
   };
-
-
 
   return (
     <Wrapper>

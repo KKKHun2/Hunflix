@@ -1,11 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import Sliders from "../components/Slider";
 import styled from "styled-components";
-import { getNowPlayingMovies,getPopularMovies,getUpcomingMovies,IGetMoviesResult,LIST_TYPE,IData } from "../api";
+import { getNowPlayingMovies,getPopularMovies,getUpcomingMovies,IGetMoviesResult,LIST_TYPE} from "../api";
 import { makeImagePath } from "../utils";
-import { useState } from "react";
-
-
 
 const Wrapper = styled.div`
   background-color: ${props => props.theme.color.background};
@@ -52,23 +49,15 @@ function Home() {
     [LIST_TYPE[0], "nowPlayingMovies"],
     getNowPlayingMovies
   );
-console.log(nowPlayingMoviesList)
-  // upcoming
   const { data: upcomingMoviesList } = useQuery<IGetMoviesResult>(
     [LIST_TYPE[1], "upcomingMovies"],
     getUpcomingMovies
   );
-
-  // popular
   const { data: popularMoviesList } = useQuery<IGetMoviesResult>(
     [LIST_TYPE[2], "popularMovies"],
     getPopularMovies
   );
-  const [showModal, setShowModal] = useState(false);
 
-  const toggleModal = () => {
-    setShowModal((prev) => !prev);
-  };
   return (
     <Wrapper>
       {isLoading ? (
@@ -82,9 +71,7 @@ console.log(nowPlayingMoviesList)
             <Overview>
               {(nowPlayingMoviesList && nowPlayingMoviesList?.results[0].overview.length>190)
                 ? nowPlayingMoviesList?.results[0].overview.slice(0,190)+"...."
-                : nowPlayingMoviesList?.results[0].overview}
-            {/* <button onClick={toggleModal }>123</button> */}
-               
+                : nowPlayingMoviesList?.results[0].overview}               
             </Overview>
           </Banner> 
           <SliderArea>
@@ -112,21 +99,6 @@ console.log(nowPlayingMoviesList)
           </SliderArea>
         </>
       )}
-      {/* {showModal?
-      <AnimatePresence>
-        
-      <Modal
-  dataId={nowPlayingMoviesList?.results[0]?.id || 0} // id 프로퍼티를 가져와서 전달
-  listType={"coverMovie"}
-  menuName={"home"}
-  requestUrl={"movie"}
-
-/>
-        
-      </AnimatePresence>
-      :null
-        } */}
-      
     </Wrapper>
   );
 }
