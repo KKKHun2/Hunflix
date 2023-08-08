@@ -3,12 +3,14 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 const Logo = styled(motion.svg)`
-  width: 280px;
+  width: 290px;
   height: 85px;
-  margin: 0px -50px -40px 0px;
+  left:0;
+  top:0;
+  margin: -2px -45px -50px 0px;
   fill: ${props => props.theme.color.point};
   path {
-    stroke-width: 6px;
+    stroke-width: 3px;
     stroke: white;
   }
 `;
@@ -33,10 +35,7 @@ const MySvgIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   variants={logoVariants}
   whileHover="active"
   animate="normal"
-  xmlns="http://www.w3.org/2000/svg"
-  width="240"
-          height="auto"
-  viewBox="0 0 1024 276.742"
+  viewBox="0 0 1024 300"
   >
     <g>
       <motion.path
