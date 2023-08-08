@@ -81,7 +81,6 @@ function Search() {
             listType={bigMatch?.params.menuName || ""}
             menuName={"search"}
             requestUrl={bigMatch?.params.menuName || ""}
-            returnUrl={`/search?keyword=${keyword}`}
           />
         ) : null}
       </AnimatePresence>

@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 const Logo = styled(motion.svg)`
-  width: 550px;
-  height: 80px;
-  margin: 0px -170px -40px -100px;
+  width: 280px;
+  height: 85px;
+  margin: 0px -50px -40px 0px;
   fill: ${props => props.theme.color.point};
   path {
     stroke-width: 6px;

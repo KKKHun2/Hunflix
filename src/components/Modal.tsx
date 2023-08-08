@@ -21,18 +21,17 @@ const Overlay = styled(motion.div)`
 
 const ModalBox = styled(motion.div)`
   position: fixed;
-  top: 7rem;
+  top: 6rem;
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 50%;
-  min-width: 60rem;
-  height: 78%;
+  margin-top:60px;
+  width: 60%;
+  height: 70%;
   overflow: auto;
   border-radius: 1.5rem;
   background-color: ${(props) => props.theme.color.background};
   color: ${(props) => props.theme.color.text};
-  
   z-index: 100;
 `;
 

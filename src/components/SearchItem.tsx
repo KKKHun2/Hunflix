@@ -19,13 +19,14 @@ const Row = styled.div`
   }
 `;
 
-const Box = styled(motion.div)<{ bgphoto: string }>`
+const Box = styled(motion.div)<{ bgphoto: string; offset: number }>`
   display: block;
   float: left;
   margin: 0.3rem;
   width: 100%;
   height: 16rem;
-  background-image: url(${(props) => props.bgphoto});
+  width: calc(100% / ${(props) => props.offset} - 0.6rem);
+
   background-size: cover;
   background-position: center;
   font-size: 4rem;
@@ -49,17 +50,6 @@ const Info = styled(motion.div)`
     text-align: center;
     font-size: 1.8rem;
   }
-`;
-
-const NoSearchData = styled.div`
-  position: absolute;
-  top: 39%;
-  transform: translateY(-50%);
-  padding-top: 8rem;
-  width: 100%;
-  text-align: center;
-  font-size: 2.8rem;
-  font-weight: 500;
 `;
 
 const boxVariants = {
@@ -95,16 +85,19 @@ const SearchItem = ({ keyword }: { keyword: string }) => {
     { useErrorBoundary: true }
   );
 
+  const offset = 6;
   const navigate = useNavigate();
   const onBoxClicked = (menuName: string, id: number) => {
     navigate(`/search/${menuName}/${id}?keyword=${keyword}`);
   };
 
+
+
   return (
     <>
-      {data?.results && data.results.length > 0 ? ( // 수정된 부분
+      {data  && data.results.length > 0 ? (
         <Row>
-          {data.results.map((d) => (
+          {data?.results.map((d) => (
             <Box
               layoutId={d.id + "" + d.media_type}
               key={d.id}
@@ -112,6 +105,7 @@ const SearchItem = ({ keyword }: { keyword: string }) => {
               initial="normal"
               whileHover="hover"
               transition={{ type: "tween" }}
+              offset={offset}
               bgphoto={makeImagePath(d.backdrop_path || "", "w500")}
               onClick={() => onBoxClicked(d.media_type, d.id)}
             >
@@ -122,24 +116,7 @@ const SearchItem = ({ keyword }: { keyword: string }) => {
           ))}
         </Row>
       ) : (
-        <NoSearchData>
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                fillRule="evenodd"
-                d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
-                clipRule="evenodd"
-              />
-            </svg>
-
-            '{keyword}' 검색 결과가 없습니다.
-          </div>
-        </NoSearchData>
+        <div>No search results available.</div>
       )}
     </>
   );

@@ -9,8 +9,8 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
 const Wrapper = styled(motion.div)`
   position: relative;
-  min-height: 23.9rem;
-  margin-top: 3rem;
+  min-height: 17rem;
+  margin-top: 2rem;
   overflow: hidden;
   :hover .arrow {
     opacity: 1;
@@ -20,10 +20,10 @@ const Wrapper = styled(motion.div)`
 `;
 
 const Title = styled.div`
-  font-size: 2.4rem;
+  font-size: 1.6rem;
   padding-left: 2rem;
   font-weight: 700;
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
   color:${props => props.theme.color.text};
 `;
 
@@ -71,7 +71,6 @@ const Row = styled(motion.div)<{ gridcnt: number }>`
   grid-template-columns: repeat(6, 1fr);
   position: absolute;
   left: 0;
-  margin-bottom: 3rem;;
   width: 100%;
   clear: both;
   &:after {
@@ -212,7 +211,7 @@ export default function Sliders({
   const bigMatch: PathMatch<string> | null = useMatch(
     `/${menuName}/${listType}/:id`
   );
-
+  console.log(data)
   const rowProps = {
     gridcnt: offset,
     custom: isRight,

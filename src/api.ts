@@ -134,7 +134,7 @@ export interface IDetailInfo {
 
 export interface IGetSearchResult {
   page: number;
-  results: ISearch[]; // 영화 데이터 interface의 []
+  results: ISearch[]; 
   total_pages: number;
   total_results: number;
 }
@@ -148,7 +148,7 @@ interface ISearch {
   media_type: string;
 }
 export function searchData(keyword: string) {
-  return fetch(`${BASE_PATH}/search/multi?api_key=${API_KEY}&query=${keyword}`)
+  return fetch(`${BASE_PATH}/search/multi?${TAIL_PATH}&query=${keyword}`)
     .then((response) => response.json())
     .catch((err) => err);
 }

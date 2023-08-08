@@ -19,6 +19,7 @@ const Banner = styled.div<{ bgphoto: string }>`
   height: 70vh;
   display: flex;
   flex-direction: column;
+  position: relative;
   justify-content: center;
   padding: 60px;
   color: #ffffff;
@@ -30,21 +31,39 @@ const Banner = styled.div<{ bgphoto: string }>`
   transition: background-image 0.2s ease;
 `;
 const Title = styled.h2`
-  font-size: 68px;
+  font-size: 48px;
   font-weight: 400;
-  margin-top:150px;
 `;
 const Overview = styled.p`
-  font-size: 30px;
-  margin-top: 50px;
-  width: 50%;
+  font-size: 24px;
+  margin-top: 40px;
+  width: 40%;
   font-weight: 350;
 `;
 
 const SliderArea = styled.div`
   position: relative;
- 
 `;
+const BTitleContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  margin-bottom:20px;
+  margin-right: 30px;
+`;
+
+const BTitle = styled.div<{ active: boolean }>`
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  margin:10px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: ${(props) =>
+    props.active ? "#e8e8e8c5" : "rgba(215, 215, 215, 0.2)"};
+`;
+
 
 function Home() {
   const { data: nowPlayingMoviesList, isLoading } = useQuery<IGetMoviesResult>(
@@ -60,14 +79,26 @@ function Home() {
     getPopularMovies
   );
   const [activeIndex, setActiveIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  useEffect(() => {
+ useEffect(() => {
     const interval = setInterval(() => {
+      if (hoveredIndex === null) {
         setActiveIndex((prevIndex) => (prevIndex + 1) % 5);
+      }
     }, 3500);
     return () => clearInterval(interval);
-  }, []);
+  }, [hoveredIndex]);
 
+  const handleMouseEnter = (index: number) => {
+    setHoveredIndex(index);
+    setActiveIndex(index); // 호버 시 자동 변환을 멈추도록 추가
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+    
+  };
   return (
     <Wrapper>
       {isLoading ? (
@@ -83,25 +114,37 @@ function Home() {
                 ? nowPlayingMoviesList?.results[activeIndex].overview.slice(0,190)+"...."
                 : nowPlayingMoviesList?.results[activeIndex].overview}               
             </Overview>
+            <BTitleContainer>
+          {nowPlayingMoviesList?.results.slice(0,5).map((show,index)=>(
+              <BTitle
+              key={show.id}
+              active={activeIndex === index}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+            />
+            
+            ))}
+            </BTitleContainer>
           </Banner> 
+          
           <SliderArea>
             <Sliders
               data={nowPlayingMoviesList as IGetMoviesResult}
-              title={"NOW PLAYING"}
+              title={"지금 상영중 영화"}
               listType={LIST_TYPE[0]}
               mediaType={"movie"}
               menuName={"home"}
             />
             <Sliders
               data={upcomingMoviesList as IGetMoviesResult}
-              title={"UPCOMING MOVIES"}
+              title={"출시예정 영화"}
               listType={LIST_TYPE[1]}
               mediaType={"movie"}
               menuName={"home"}
             />
             <Sliders
               data={popularMoviesList as IGetMoviesResult}
-              title={"POPULAR MOVIES"}
+              title={"인기 급상승 영화"}
               listType={LIST_TYPE[2]}
               mediaType={"movie"}
               menuName={"home"}

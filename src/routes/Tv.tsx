@@ -20,7 +20,7 @@ const Loader = styled.div`
 const Banner = styled.div<{ bgphoto: string }>`
   display: flex;
   margin-left: -50px;
-  height: 70vh;
+  height: 78vh;
   padding: 60px;
   color: #ffffff;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
@@ -30,7 +30,7 @@ const Banner = styled.div<{ bgphoto: string }>`
 `;
 
 const Title = styled.div<{ active: boolean }>`
-  font-size: 30px;
+  font-size: 18px;
   text-align: left;
   padding: 10px;
   font-weight: 500;
@@ -69,7 +69,7 @@ const BannerContent = styled.div`
   background-color: rgba(255, 255, 255, 0.15);
   margin-top: 60px;
   border-radius: 20px;
-  height: 28rem;
+  height: 25rem;
 `;
 
 const SliderArea = styled.div`
@@ -98,7 +98,7 @@ function Tv() {
       if (hoveredIndex === null) {
         setActiveIndex((prevIndex) => (prevIndex + 1) % 5);
       }
-    }, 3000);
+    }, 3500);
     return () => clearInterval(interval);
   }, [hoveredIndex]);
 
