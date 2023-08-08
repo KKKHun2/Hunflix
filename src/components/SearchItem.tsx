@@ -23,10 +23,9 @@ const Box = styled(motion.div)<{ bgphoto: string; offset: number }>`
   display: block;
   float: left;
   margin: 0.3rem;
-  width: 100%;
-  height: 16rem;
   width: calc(100% / ${(props) => props.offset} - 0.6rem);
-
+  height: 16rem;
+  background-image: url(${(props) => props.bgphoto});
   background-size: cover;
   background-position: center;
   font-size: 4rem;
@@ -43,13 +42,26 @@ const Info = styled(motion.div)`
   position: relative;
   top: 15.8rem;
   width: 100%;
-  padding: 1rem;
-  background-color: ${(props) => props.theme.color.neutral};
+  padding: 10px;
+  color:${(props) => props.theme.color.text};
+  background-color: ${(props) => props.theme.color.background};
   opacity: 0;
   h4 {
     text-align: center;
     font-size: 1.8rem;
   }
+`;
+
+const NoSearchData = styled.div<{ imgUrl: string }>`
+  position: absolute;
+  top: 39%;
+  transform: translateY(-50%);
+  padding-top: 8rem;
+  width: 100%;
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 500;
+  background: url(${(props) => props.imgUrl}) top;
 `;
 
 const boxVariants = {
@@ -78,24 +90,22 @@ const infoVariants = {
   },
 };
 
-const SearchItem = ({ keyword }: { keyword: string }) => {
+function SearchContent({ keyword }: { keyword: string }) {
+  const offset = 4;
   const { data } = useQuery<IGetSearchResult>(
     ["search", keyword],
     () => searchData(keyword || ""),
     { useErrorBoundary: true }
   );
 
-  const offset = 6;
   const navigate = useNavigate();
   const onBoxClicked = (menuName: string, id: number) => {
     navigate(`/search/${menuName}/${id}?keyword=${keyword}`);
   };
 
-
-
   return (
     <>
-      {data  && data.results.length > 0 ? (
+      {data && data.results.length > 0 ? (
         <Row>
           {data?.results.map((d) => (
             <Box
@@ -105,8 +115,8 @@ const SearchItem = ({ keyword }: { keyword: string }) => {
               initial="normal"
               whileHover="hover"
               transition={{ type: "tween" }}
-              offset={offset}
               bgphoto={makeImagePath(d.backdrop_path || "", "w500")}
+              offset={offset}
               onClick={() => onBoxClicked(d.media_type, d.id)}
             >
               <Info variants={infoVariants}>
@@ -116,10 +126,12 @@ const SearchItem = ({ keyword }: { keyword: string }) => {
           ))}
         </Row>
       ) : (
-        <div>No search results available.</div>
+        <NoSearchData imgUrl={"" || ""}>
+          '{keyword}' 검색 결과가 없습니다.
+        </NoSearchData>
       )}
     </>
   );
-};
+}
 
-export default SearchItem;
+export default SearchContent;

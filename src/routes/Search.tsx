@@ -55,8 +55,11 @@ function Search() {
   const location = useLocation();
   const keyword = new URLSearchParams(location.search).get("keyword");
 
-  const { register, handleSubmit, setValue } = useForm<ISearchForm>();
-  setValue("searchKeyword", keyword || "");
+  const { register, handleSubmit } = useForm<ISearchForm>({
+    defaultValues: {
+      searchKeyword: keyword || "",
+    },
+  });
 
   const navigate = useNavigate();
   const onValid = (data: ISearchForm) => {
@@ -81,6 +84,7 @@ function Search() {
             listType={bigMatch?.params.menuName || ""}
             menuName={"search"}
             requestUrl={bigMatch?.params.menuName || ""}
+            returnUrl={`/search?keyword=${keyword}`}
           />
         ) : null}
       </AnimatePresence>
