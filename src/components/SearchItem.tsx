@@ -22,9 +22,9 @@ const Row = styled.div`
 const Box = styled(motion.div)<{ bgphoto: string; offset: number }>`
   display: block;
   float: left;
-  margin: 0.3rem;
-  width: calc(100% / ${(props) => props.offset} - 0.6rem);
-  height: 16rem;
+  margin: 0.4rem;
+  width: calc(100% / ${(props) => props.offset} - 0.8rem);
+  height: 15rem;
   background-image: url(${(props) => props.bgphoto});
   background-size: cover;
   background-position: center;
@@ -40,9 +40,11 @@ const Box = styled(motion.div)<{ bgphoto: string; offset: number }>`
 
 const Info = styled(motion.div)`
   position: relative;
-  top: 15.8rem;
+  top: 15rem;
   width: 100%;
   padding: 10px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
   color:${(props) => props.theme.color.text};
   background-color: ${(props) => props.theme.color.background};
   opacity: 0;
@@ -52,7 +54,7 @@ const Info = styled(motion.div)`
   }
 `;
 
-const NoSearchData = styled.div<{ imgUrl: string }>`
+const NoSearch = styled.div<{ imgUrl: string }>`
   position: absolute;
   top: 39%;
   transform: translateY(-50%);
@@ -91,7 +93,7 @@ const infoVariants = {
 };
 
 function SearchContent({ keyword }: { keyword: string }) {
-  const offset = 4;
+  const offset = 5;
   const { data } = useQuery<IGetSearchResult>(
     ["search", keyword],
     () => searchData(keyword || ""),
@@ -126,9 +128,9 @@ function SearchContent({ keyword }: { keyword: string }) {
           ))}
         </Row>
       ) : (
-        <NoSearchData imgUrl={"" || ""}>
+        <NoSearch imgUrl={"" || ""}>
           '{keyword}' 검색 결과가 없습니다.
-        </NoSearchData>
+        </NoSearch>
       )}
     </>
   );

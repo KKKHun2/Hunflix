@@ -139,14 +139,12 @@ const rowVariants = {
 const boxVariants = {
   normal: {
     scale: 1,
-    borderBottomLeftRadius: "0px", 
-    borderBottomRightRadius: "0px",
+    
   },
   hover: {
-    scale: 1.3,
-    y: -50,
-    borderBottomLeftRadius: "10px", 
-    borderBottomRightRadius: "10px",
+    scale: 1.2,
+    y: -40,
+    
     transition: {
       type: "tween",
       delay: 0.3,
@@ -211,7 +209,7 @@ export default function Sliders({
   const bigMatch: PathMatch<string> | null = useMatch(
     `/${menuName}/${listType}/:id`
   );
-  console.log(data)
+
   const rowProps = {
     gridcnt: offset,
     custom: isRight,

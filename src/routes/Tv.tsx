@@ -20,7 +20,7 @@ const Loader = styled.div`
 const Banner = styled.div<{ bgphoto: string }>`
   display: flex;
   margin-left: -50px;
-  height: 78vh;
+  height: 75vh;
   padding: 60px;
   color: #ffffff;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),

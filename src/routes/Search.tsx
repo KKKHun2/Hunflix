@@ -15,9 +15,8 @@ const Wrapper = styled.div`
   padding: 11rem 6rem 0;
 `;
 
-const LeftWrap = styled.div``;
 
-const RightWrap = styled.div`
+const SearchWrap = styled.div`
   position: relative;
   width: 100%;
   height: calc(100vh - 17.4rem);
@@ -70,13 +69,11 @@ function Search() {
 
   return (
     <Wrapper>
-      <LeftWrap>
         <SearchForm onSubmit={handleSubmit(onValid)}>
           <Input type="text" {...register("searchKeyword")} />
           <Announcement>"{keyword}"으로 검색한 결과입니다.</Announcement>
         </SearchForm>
-      </LeftWrap>
-      <RightWrap>{keyword && <SearchItem keyword={keyword} />}</RightWrap>
+      <SearchWrap>{keyword && <SearchItem keyword={keyword} />}</SearchWrap>
       <AnimatePresence>
         {bigMatch ? (
           <Modal

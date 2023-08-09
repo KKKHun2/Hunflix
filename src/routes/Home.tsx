@@ -55,9 +55,9 @@ const BTitleContainer = styled.div`
 
 const BTitle = styled.div<{ active: boolean }>`
   display: inline-block;
-  width: 35px;
-  height: 35px;
-  margin:10px;
+  width: 40px;
+  height: 40px;
+  margin:15px;
   cursor: pointer;
   border-radius: 50%;
   background-color: ${(props) =>
