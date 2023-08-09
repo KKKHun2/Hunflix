@@ -13,6 +13,7 @@ import SearchItem from "../components/SearchItem";
 
 const Wrapper = styled.div`
   padding: 11rem 6rem 0;
+  background-color: ${props => props.theme.color.secondary};
 `;
 
 
@@ -31,19 +32,25 @@ const SearchForm = styled.form`
 
 const Input = styled.input`
   padding: 0.5rem 0.5rem;
-  color: white;
-  font-size: 2.8rem;
-  background-color: transparent;
-  border: 1px solid ${props => props.theme.color.neutral};
+  color:  ${props => props.theme.color.text};
+  font-size: 2rem;
+  border-radius: 10px;
+  background-color: ${props => props.theme.color.background};
+  border: 2px solid ${props => props.theme.color.text};
   z-index: 1;
   transform-origin: left center;
 `;
-const Announcement = styled.p`
+const InputSub = styled.p`
   display: inline-block;
-  padding-left: 1.8rem;
-  text-align: left;
-  font-size: 1.4rem;
+  color:  ${props => props.theme.color.text};
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  font-weight: 450;
   vertical-align: bottom;
+  .sub{
+    font-weight: 800;
+    font-size: 2rem;
+  }
 `;
 
 interface ISearchForm {
@@ -71,7 +78,7 @@ function Search() {
     <Wrapper>
         <SearchForm onSubmit={handleSubmit(onValid)}>
           <Input type="text" {...register("searchKeyword")} />
-          <Announcement>"{keyword}"으로 검색한 결과입니다.</Announcement>
+          <InputSub><span className="sub">"{keyword}"</span>으로 검색한 결과입니다.</InputSub>
         </SearchForm>
       <SearchWrap>{keyword && <SearchItem keyword={keyword} />}</SearchWrap>
       <AnimatePresence>

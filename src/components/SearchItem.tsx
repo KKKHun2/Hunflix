@@ -54,16 +54,20 @@ const Info = styled(motion.div)`
   }
 `;
 
-const NoSearch = styled.div<{ imgUrl: string }>`
+const NoSearch = styled.div`
   position: absolute;
-  top: 39%;
-  transform: translateY(-50%);
-  padding-top: 8rem;
+  top: 25%;
+  padding-top: 4rem;
   width: 100%;
   text-align: center;
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 500;
-  background: url(${(props) => props.imgUrl}) top;
+  color:${(props)=>props.theme.color.text};
+  .sub{
+    margin-top:10px;
+    font-size: 1.8rem;
+    font-weight: 300;
+  }
 `;
 
 const boxVariants = {
@@ -72,7 +76,7 @@ const boxVariants = {
   },
   hover: {
     scale: 1.3,
-    y: -50,
+    y: -40,
     transition: {
       type: "tween",
       delay: 0.5,
@@ -128,8 +132,9 @@ function SearchContent({ keyword }: { keyword: string }) {
           ))}
         </Row>
       ) : (
-        <NoSearch imgUrl={"" || ""}>
+        <NoSearch>
           '{keyword}' 검색 결과가 없습니다.
+          <p className="sub">비슷한 검색어로 검색 부탁드립니다.</p>
         </NoSearch>
       )}
     </>

@@ -6,7 +6,7 @@ import { makeImagePath } from "../utils";
 import { useState, useEffect } from "react";
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.color.neutral};
+  background-color: ${props => props.theme.color.background};
   padding-bottom: 200px;
 `;
 
@@ -30,7 +30,7 @@ const Banner = styled.div<{ bgphoto: string }>`
 `;
 
 const Title = styled.div<{ active: boolean }>`
-  font-size: 18px;
+  font-size: 1.2rem;
   text-align: left;
   padding: 10px;
   font-weight: 500;
@@ -45,10 +45,10 @@ const Title = styled.div<{ active: boolean }>`
 `;
 
 const RankTitle = styled.div`
-  font-weight: bold;
-  font-size: 27px;
+  font-weight: 800;
+  font-size: 1.5rem;
   margin: 24px 0px 13px -60px;
-  color: rgba(255, 255, 255, 0.8);
+  color: ${(props)=>props.theme.color.text};
 `;
 
 const RankBox = styled.div<{ index: number }>`
@@ -58,7 +58,6 @@ const RankBox = styled.div<{ index: number }>`
   justify-content: flex-start;
   align-items: flex-start;
   border-radius: 15px;
-  font-size: 24px;
   padding: 10px;
 `;
 

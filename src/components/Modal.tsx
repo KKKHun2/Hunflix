@@ -123,24 +123,9 @@ const ModalInfo = styled.ul`
       padding-left: 0.4rem;
       vertical-align: top;
     }
-  }
-  li ~ li {
     position: relative;
-    margin-left: 1.3rem;
-    padding-left: 1.2rem;
+    margin-right:1.5rem;
   }
-  li ~ li:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0.25rem;
-    height: 0.25rem;
-    border-radius: 50%;
-    background-color: #7e7e7e;
-  }
-
 `;
 
 const ModalTagLine = styled.h3`
@@ -165,7 +150,6 @@ const ModalTagLine = styled.h3`
 
 const ModalOverView = styled.p`
   margin-bottom: 2rem;
-  margin-top: -10px;
   font-size: 1.2rem;
   line-height: 2rem;
 
@@ -340,8 +324,8 @@ export default function Modal({
                       <ModalTagLine>{data?.tagline}</ModalTagLine>
                     ) : null}
                     <ModalOverView title={data?.overview}>
-                      {data && data?.overview.length > 390
-                        ? data?.overview.slice(0, 390) + "..."
+                      {data && data?.overview?.length > 390
+                        ? data?.overview?.slice(0, 390) + "..."
                         : data?.overview}
                     </ModalOverView>
                   </ModalItem>

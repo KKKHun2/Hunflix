@@ -31,11 +31,11 @@ const Banner = styled.div<{ bgphoto: string }>`
   transition: background-image 0.2s ease;
 `;
 const Title = styled.h2`
-  font-size: 48px;
+  font-size: 3.3rem;
   font-weight: 400;
 `;
 const Overview = styled.p`
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-top: 40px;
   width: 40%;
   font-weight: 350;

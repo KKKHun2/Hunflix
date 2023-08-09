@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { DarkMode } from '../DarkMode';
 import MySvgIcon from '../components/MySvgIcon'
+
 const Nav = styled(motion.nav)`
   display: flex;
   justify-content: space-between;
@@ -66,13 +67,14 @@ const Input = styled(motion.input)`
   position: absolute;
   right: 0px;
   width:12rem;
-  padding: 5px 10px;
+  padding: 7px 10px;
   padding-left: 35px;
   z-index: -1;
-  color: white;
+  color: ${props => props.theme.color.text};
   font-size: 0.7rem;
   background-color: transparent;
-  border: 1px solid ${props => props.theme.color.neutral};
+  border-radius: 5px;
+  border: 1px solid ${props => props.theme.color.text};
 `;
 
 const DarkModeButton = styled.button`
@@ -92,9 +94,6 @@ const DarkModeButton = styled.button`
     scale: 0.8;
   }
 `;
-
-
-
 interface IForm {
     keyword: string;
   }
@@ -111,13 +110,11 @@ function Header() {
   const { register, handleSubmit } = useForm<IForm>();
   const onValid = (data: IForm) => {
     navigate(`/search?keyword=${data.keyword}`);
-    setSearchOpen(false); // Close the search input
-    // Reset the search input value
+    setSearchOpen(false); 
     inputAnimation.start({ scaleX: 1 });
     setTimeout(() => {
       inputAnimation.start({ scaleX: 0 });
-      // Assuming you have the `setValue` function from useForm
-    }, 300);
+    },);
   };
   const toggleSearch = () => {
     if (searchOpen) {
