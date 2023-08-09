@@ -1,5 +1,5 @@
 
-const API_KEY = process.env.APP_API_KEY;
+const API_KEY = `5f071d23e600d39b7d45ab259e41ce99`;
 const LANGUAGE = "ko-KO";
 const REGION = "KR";
 const BASE_PATH = "https://api.themoviedb.org/3";
