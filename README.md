@@ -1,44 +1,82 @@
 # themovieDB에서 받아온 정보들로 HunFlix 제작
 
-typescript를 사용하고 router 설정,recoil을 사용해 atoms으로 저장하고 꺼내주기 
 
-input에 required사용해서 입력안했을시 에러메시지 출력
-
-<img src="https://github.com/KKKHun2/Country_Todo/assets/105702862/70e19174-2d37-423c-a405-ed66f35b7b8b.png"  width="600" height="400"/>
-
-recoil로 상태 저장
-                                                                                                                                 
-<img src="https://github.com/KKKHun2/Country_Todo/assets/105702862/9ff7d60d-db67-4856-b04e-1071e69c71f6.png"  width="600" height="500"/>
 
 # 배포 링크
-ㅁㄴㅇㅁㄴㄴㅁㅇㅁㄴ
+https://hunflix.vercel.app/
+## QR코드 :<br />
+
+<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/ab7f59aa-f313-4272-bbb5-55327079df9c.png" alt="훈플릭스" width="200" height="200">
 
 
 
 
 # app 메인화면 (/Home)
 
-인기영화 첫번째 영화 배너
+  메인화면에 배너에는 상영중 영화가 등수로 1~5등까지가 3초시간에 맞춰 슬라이드기능으로 5개영화가 돌아가면서 보여주게 했습니다.
+    <br />
+    
+  ![image](https://github.com/KKKHun2/Hunflix/assets/105702862/2aa10d0e-2704-4d59-8ddd-da3eb4162465)
+  <br />
+  배너 우측 하단에 호버기능을 가진 원을 넣어서 해당 원에 마우스가 가게되면 해당 영화가 배너에 보이게 했습니다.
+    <br /> 
+<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/94ccd7e6-1169-4d5a-8d29-1a6bfab06b8b.png" width="600" height="400">
+    <br />
 
-3개의 슬라이드
-  상영중 영화
+## Header
 
-  출시예정 영화
+헤더부분에도 에니메이션 효과를 넣어서 Home화면과 TvShow 페이지 둘 중 현재 어떤 페이지에 있는지 확인 가능하도록 하였습니다.
 
-  인기 영화 
+그리고 검색부분은 누르면 인풋창 애니메이션 효과와 함께 열려서 검색이 가능합니다.
+## DarkMode
+다크모드 기능을 넣어서 사용자가 화면을 더 편안하게 사용하고 시야 피로를 줄이는 데 도움이 되며, 사용자에게 선택권을 제공하여 개인적인 환경에 맞게 설정할 수 있도록 하였습니다.
 
-![스크린샷 2023-06-07 오전 11 39 22](https://github.com/KKKHun2/Country_Todo/assets/105702862/a4493b42-5545-46cd-ab04-28ecbbcbc098)
+<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/5bda65f9-bfab-4af5-9f34-6a3f05309c91.png" width="600" height="400">
 
-# app tv show 화면(/Tv show)
+<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/74bf1dc5-4c56-461c-ac59-c9c379a8d89b.png" width="600" height="400">
 
-상영중인 인기 tv쇼 순위표
 
-인기 tv쇼 슬라이드
+<br />
+<br />
+<br />
+
+# Home page
+
+  <br />
+ Home 화면에는 상영중,출시예정,인기 영화들로 3개의 슬라이드를 구성했습니다.
+ 
+![image](https://github.com/KKKHun2/Hunflix/assets/105702862/b2d3cb28-68fe-45fa-89c9-e0a5e0697be1)
+ 
+  해당 api 코드
+  <br />
+<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/dcd2d25e-e21c-4b18-8d9b-4106d6ae165c.png" width="600" height="400">
+
+
+# Tv Show page(/Tv show)
+
+tv쇼에서도 Home화면과 동일하게 3개의 슬라이드 한국 인기드라마, 전세계 인기 드라마,평점 높은 드라마 이렇게 3개로 구성했습니다. 
+
+  <br />
+api코드로 데이터를 가져오는 코드
+  <br />
+<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/95789d1d-3603-4f07-88e1-dffc20e3d13c.png" width="600" height="400">
+
+
 
 # app 검색화면(/Search)
 
-키워드 검색 
-키워드 없을시 나오는 화면
+
+<div align=center>
+  
+키워드 검색시
+<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/3c61e10a-6889-47ef-aa70-06c0a6b888fa.png" width="400" height="400">
+</a>
+키워드 없을시 
+ <img src="https://github.com/KKKHun2/Hunflix/assets/105702862/4e0e3f69-853b-4215-86f8-3651f34eb1e3.png" width="400" height="400">
+</a>
+
+</div>
+
 
 #
 <div align=center><h1>📚 FE STACKS</h1></div>
