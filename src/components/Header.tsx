@@ -111,6 +111,13 @@ function Header() {
   const { register, handleSubmit } = useForm<IForm>();
   const onValid = (data: IForm) => {
     navigate(`/search?keyword=${data.keyword}`);
+    setSearchOpen(false); // Close the search input
+    // Reset the search input value
+    inputAnimation.start({ scaleX: 1 });
+    setTimeout(() => {
+      inputAnimation.start({ scaleX: 0 });
+      // Assuming you have the `setValue` function from useForm
+    }, 300);
   };
   const toggleSearch = () => {
     if (searchOpen) {
