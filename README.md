@@ -35,29 +35,6 @@ https://hunflix.vercel.app/
 <img src="https://github.com/KKKHun2/Hunflix/assets/105702862/dcd2d25e-e21c-4b18-8d9b-4106d6ae165c.png" width="600" height="400">
 
 
-## Header
-
-헤더부분에도 에니메이션 효과를 넣어서 Home화면과 TvShow 페이지 둘 중 현재 어떤 페이지에 있는지 확인 가능하도록 하였습니다.
-
-그리고 검색부분은 누르면 검색 아이콘을 누르면 애니메이션 효과와 함께 인풋창이 나오고 검색이 가능합니다.
-
- <br />
- <br />
-
-## 색상테마(다크모드,라이트모드)
-색상테마 기능을 넣어서 다크모드, 라이트모드로 사용자가 화면을 더 편안하게 사용하고 시야 피로를 줄이는 데 도움이 되며, 사용자에게 선택권을 제공하여 개인적인 환경에 맞게 설정할 수 있도록 하였습니다.
-
-<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/5bda65f9-bfab-4af5-9f34-6a3f05309c91.png" width="600" height="500">
-
-<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/74bf1dc5-4c56-461c-ac59-c9c379a8d89b.png" width="600" height="500">
-
-
-<br />
-<br />
-<br />
-
-
-
 
 # Tv Show page(/Tv show)
 
@@ -90,7 +67,39 @@ api코드로 데이터를 가져오는 코드
   </div>
 </div>
 
-# MainLogo,Favicon
+# 모달기능
+각각 페이지마다 있는 슬라이드에 마우스를 가져다 대면 해당 슬라이드 컷이 위로이동하면서 제목이 나오고 클릭을 하면 새로운 모달창이 열리게 됩니다.
+<br />
+해당 모달에는 api로 받아온 정보인 영화 또는 Tv에 관한 설명이 되어있습니다.(년도,상영시간,종류,평점등)
+ <br />
+  <br />
+<img width="1418" alt="image" src="https://github.com/KKKHun2/Hunflix/assets/105702862/2cdbf3bd-4c92-4a5a-a3c2-73ef8c587f9a">
+
+ <br />
+
+## Header
+
+헤더부분에도 에니메이션 효과를 넣어서 Home화면과 TvShow 페이지 둘 중 현재 어떤 페이지에 있는지 확인 가능하도록 하였습니다.
+
+그리고 검색부분은 누르면 검색 아이콘을 누르면 애니메이션 효과와 함께 인풋창이 나오고 검색이 가능합니다.
+
+ <br />
+ <br />
+
+## 색상테마(다크모드,라이트모드)
+색상테마 기능을 넣어서 다크모드, 라이트모드로 사용자가 화면을 더 편안하게 사용하고 시야 피로를 줄이는 데 도움이 되며, 사용자에게 선택권을 제공하여
+<br /> 개인적인 환경에 맞게 설정할 수 있도록 하였습니다.
+ <br />
+ 
+<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/5bda65f9-bfab-4af5-9f34-6a3f05309c91.png" width="600" height="500">
+
+<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/74bf1dc5-4c56-461c-ac59-c9c379a8d89b.png" width="600" height="500">
+
+
+<br />
+<br />
+
+# MainLogo,Favicon,예외처리
 
 로고와 파비콘도 직접 만들어서 적용했습니다.
 <br />
@@ -99,6 +108,15 @@ api코드로 데이터를 가져오는 코드
 <br />
 파비콘
 <img src="https://github.com/KKKHun2/Hunflix/assets/105702862/ef76d229-dcc5-4ea7-8039-0b769e0b491b.png" width="100" height="100">
+<br />
+가끔 배경이미지가 존재하지 않는 영화,tv쇼가 있어서 해당 이미지로 예외처리 상황에 대체하였습니다.
+<br />
+ <img width="253" alt="image" src="https://github.com/KKKHun2/Hunflix/assets/105702862/3bb81856-973e-4940-ad07-5470bc516319">
+<br /> 
+배경이미지 코드
+<br />
+ <img width="603" height="400"  alt="image" src="https://github.com/KKKHun2/Hunflix/assets/105702862/7e31c24d-5169-46e4-a62c-105f3bf3e125">
+
 
 
 
