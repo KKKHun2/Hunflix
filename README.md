@@ -1,12 +1,12 @@
-# themovieDB에서 받아온 정보들로 HunFlix 제작
+# 넷플릭스 클론에서 시작해서 나만의 HunFlix 제작
 
 
 
-# 배포 링크
+## 배포 링크
 https://hunflix.vercel.app/
 ## QR코드 :<br />
 
-<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/ab7f59aa-f313-4272-bbb5-55327079df9c.png" alt="훈플릭스" width="200" height="200">
+<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/ab7f59aa-f313-4272-bbb5-55327079df9c.png" alt="훈플릭스" width="250" height="250">
 
 
 
@@ -18,30 +18,13 @@ https://hunflix.vercel.app/
     
   ![image](https://github.com/KKKHun2/Hunflix/assets/105702862/2aa10d0e-2704-4d59-8ddd-da3eb4162465)
   <br />
+   <br />
   배너 우측 하단에 호버기능을 가진 원을 넣어서 해당 원에 마우스가 가게되면 해당 영화가 배너에 보이게 했습니다.
     <br /> 
 <img src="https://github.com/KKKHun2/Hunflix/assets/105702862/94ccd7e6-1169-4d5a-8d29-1a6bfab06b8b.png" width="600" height="400">
     <br />
 
-## Header
-
-헤더부분에도 에니메이션 효과를 넣어서 Home화면과 TvShow 페이지 둘 중 현재 어떤 페이지에 있는지 확인 가능하도록 하였습니다.
-
-그리고 검색부분은 누르면 인풋창 애니메이션 효과와 함께 열려서 검색이 가능합니다.
-## DarkMode
-다크모드 기능을 넣어서 사용자가 화면을 더 편안하게 사용하고 시야 피로를 줄이는 데 도움이 되며, 사용자에게 선택권을 제공하여 개인적인 환경에 맞게 설정할 수 있도록 하였습니다.
-
-<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/5bda65f9-bfab-4af5-9f34-6a3f05309c91.png" width="600" height="400">
-
-<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/74bf1dc5-4c56-461c-ac59-c9c379a8d89b.png" width="600" height="400">
-
-
-<br />
-<br />
-<br />
-
-# Home page
-
+    
   <br />
  Home 화면에는 상영중,출시예정,인기 영화들로 3개의 슬라이드를 구성했습니다.
  
@@ -52,9 +35,38 @@ https://hunflix.vercel.app/
 <img src="https://github.com/KKKHun2/Hunflix/assets/105702862/dcd2d25e-e21c-4b18-8d9b-4106d6ae165c.png" width="600" height="400">
 
 
+## Header
+
+헤더부분에도 에니메이션 효과를 넣어서 Home화면과 TvShow 페이지 둘 중 현재 어떤 페이지에 있는지 확인 가능하도록 하였습니다.
+
+그리고 검색부분은 누르면 검색 아이콘을 누르면 애니메이션 효과와 함께 인풋창이 나오고 검색이 가능합니다.
+
+ <br />
+ <br />
+
+## 색상테마(다크모드,라이트모드)
+색상테마 기능을 넣어서 다크모드, 라이트모드로 사용자가 화면을 더 편안하게 사용하고 시야 피로를 줄이는 데 도움이 되며, 사용자에게 선택권을 제공하여 개인적인 환경에 맞게 설정할 수 있도록 하였습니다.
+
+<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/5bda65f9-bfab-4af5-9f34-6a3f05309c91.png" width="600" height="500">
+
+<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/74bf1dc5-4c56-461c-ac59-c9c379a8d89b.png" width="600" height="500">
+
+
+<br />
+<br />
+<br />
+
+
+
+
 # Tv Show page(/Tv show)
 
 tv쇼에서도 Home화면과 동일하게 3개의 슬라이드 한국 인기드라마, 전세계 인기 드라마,평점 높은 드라마 이렇게 3개로 구성했습니다. 
+<br />
+다만 홈화면과 다르게 인기컨텐츠 순위 박스를 만들어서 화면전환이 가능하게 했습니다.
+<br />
+
+<img width="1420" alt="image" src="https://github.com/KKKHun2/Hunflix/assets/105702862/cdeacaf3-2f4d-4b37-8e4e-b13d05fd58a9">
 
   <br />
 api코드로 데이터를 가져오는 코드
@@ -63,19 +75,31 @@ api코드로 데이터를 가져오는 코드
 
 
 
+
 # app 검색화면(/Search)
 
 
-<div align=center>
-  
-키워드 검색시
-<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/3c61e10a-6889-47ef-aa70-06c0a6b888fa.png" width="400" height="400">
-</a>
-키워드 없을시 
- <img src="https://github.com/KKKHun2/Hunflix/assets/105702862/4e0e3f69-853b-4215-86f8-3651f34eb1e3.png" width="400" height="400">
-</a>
-
+<div style="display: flex; align-items: center;">
+  <div style="position: relative;">
+    <img src="https://github.com/KKKHun2/Hunflix/assets/105702862/3c61e10a-6889-47ef-aa70-06c0a6b888fa.png" width="800" height="400">
+    <p style="position: absolute; top: 0; left: 0; width: 100%; text-align: center;">키워드 검색시</p>
+  </div>
+  <div style="position: relative;">
+    <img src="https://github.com/KKKHun2/Hunflix/assets/105702862/4e0e3f69-853b-4215-86f8-3651f34eb1e3.png" width="800" height="400">
+    <p style="position: absolute; top: 0; left: 0; width: 100%; text-align: center;">키워드 검색이 없을때</p>
+  </div>
 </div>
+
+# MainLogo,Favicon
+
+로고와 파비콘도 직접 만들어서 적용했습니다.
+<br />
+로고
+<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/915a3c5a-cc95-4e90-87a8-e90399e6c5d3.png" width="300" height="200">
+<br />
+파비콘
+<img src="https://github.com/KKKHun2/Hunflix/assets/105702862/ef76d229-dcc5-4ea7-8039-0b769e0b491b.png" width="100" height="100">
+
 
 
 #
@@ -95,6 +119,8 @@ api코드로 데이터를 가져오는 코드
 
 
 </div>
+
+
 
 ## 커밋 규칙
 |아이콘| 설명 | 아이콘 | 설명 |
