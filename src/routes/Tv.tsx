@@ -68,7 +68,7 @@ const BannerContent = styled.div`
   background-color: rgba(255, 255, 255, 0.15);
   margin-top: 60px;
   border-radius: 20px;
-  height: 25rem;
+  height: 24rem;
 `;
 
 const SliderArea = styled.div`
@@ -103,15 +103,13 @@ function Tv() {
 
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);
-    setActiveIndex(index); // 호버 시 자동 변환을 멈추도록 추가
+    setActiveIndex(index);
   };
 
   const handleMouseLeave = () => {
     setHoveredIndex(null);
     
   };
-
-
   return (
     <Wrapper>
       {isLoading ? (
