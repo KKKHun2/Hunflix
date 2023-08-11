@@ -137,12 +137,14 @@ const rowVariants = {
 const boxVariants = {
   normal: {
     scale: 1,
-    
+    borderBottomLeftRadius: 0, 
+    borderBottomRightRadius: 0, 
   },
   hover: {
     scale: 1.2,
     y: -40,
-    
+    borderBottomLeftRadius: 10, 
+    borderBottomRightRadius: 10, 
     transition: {
       type: "tween",
       delay: 0.3,
