@@ -57,21 +57,18 @@ export function getMovies() {
 }
 
 
-// Movies - NowPlaying
 export function getNowPlayingMovies() {
   return fetch(`${BASE_PATH}/movie/now_playing?${TAIL_PATH}`).then((response) =>
     response.json()
   );
 }
 
-// Movies - Popular
 export function getPopularMovies() {
   return fetch(`${BASE_PATH}/movie/popular?${TAIL_PATH}`).then((response) =>
     response.json()
   );
 }
 
-// Movies - Upcoming
 export function getUpcomingMovies() {
   return fetch(`${BASE_PATH}/movie/upcoming?${TAIL_PATH}`).then((response) =>
     response.json()

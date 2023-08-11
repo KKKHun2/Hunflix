@@ -93,12 +93,11 @@ function Home() {
 
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);
-    setActiveIndex(index); // 호버 시 자동 변환을 멈추도록 추가
+    setActiveIndex(index); 
   };
 
   const handleMouseLeave = () => {
     setHoveredIndex(null);
-    
   };
   return (
     <Wrapper>

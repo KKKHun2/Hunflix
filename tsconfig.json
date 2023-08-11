@@ -20,15 +20,17 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "./src",
-"paths": {
-  "@libs/*": ["libs/*"],
-  "@components/*": ["components/*"],
-  "@api/*": ["api/*"],
-  "@utils/*": ["utils/*"],
-  "@assets/*": ["assets/*"]
-}
+    "paths": {
+      "@libs/*": ["libs/*"],
+      "@components/*": ["components/*"],
+      "@api/*": ["api/*"],
+      "@utils/*": ["utils/*"],
+      "@assets/*": ["assets/*"]
+    }
   },
+  
   "include": [
     "src"
-, "../theme.ts"  ]
+  ]
 }
+

@@ -30,7 +30,7 @@ const Title = styled.div`
 const ArrowBtn = styled(motion.div)`
   position: absolute;
   top: 50%;
-  transform: translateY(-80%);
+  transform: translateY(-30%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,7 +80,6 @@ const Row = styled(motion.div)<{ gridcnt: number }>`
   }
 `;
 
-
 const Box = styled(motion.div)<{ bgphoto: string | null; offset: number }>`
   display: block;
   float: left;
@@ -117,7 +116,6 @@ const Info = styled(motion.div)`
     font-weight: 650;
   }
 `;
-
 
 const rowVariants = {
   hidden: (right: number) => {
@@ -163,7 +161,6 @@ const infoVariants = {
     },
   },
 };
-
 
 interface ISlider {
   data: IGetMoviesResult;

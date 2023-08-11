@@ -4,7 +4,8 @@ import { motion, useAnimation, useScroll, useMotionValueEvent } from "framer-mot
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { DarkMode } from '../DarkMode';
-import MySvgIcon from '../components/MySvgIcon'
+import MySvgIcon from "./MySvgIcon";
+
 
 const Nav = styled(motion.nav)`
   display: flex;

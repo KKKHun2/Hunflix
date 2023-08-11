@@ -74,15 +74,13 @@ const ModalTitle = styled.h2`
 
 const ModalSmallTitle = styled.h3`
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 800;
   color:#eee4e4;
 `;
 
 const ModalContents = styled.div`
   position: relative;
   padding: 2rem 3rem 0 3rem;
-  font-weight: 100;
-
 `;
 
 const ModalImage = styled.div<{ poster_path: string | null }>`
@@ -133,7 +131,7 @@ const ModalTagLine = styled.h3`
   margin-top: -25px;
   margin-bottom: 0.8rem;
   padding-left: 1rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   &:before {
     content: "";
     position: absolute;
@@ -149,10 +147,10 @@ const ModalTagLine = styled.h3`
 `;
 
 const ModalOverView = styled.p`
-  margin-bottom: 2rem;
-  font-size: 1.2rem;
+  margin-bottom: 1.8rem;
+  font-size: 1.1rem;
   line-height: 2rem;
-
+  font-weight: 300;
 `;
 
 const ModalCategory = styled.ul`

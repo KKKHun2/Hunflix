@@ -16,7 +16,6 @@ const Wrapper = styled.div`
   background-color: ${props => props.theme.color.secondary};
 `;
 
-
 const SearchWrap = styled.div`
   position: relative;
   width: 100%;
