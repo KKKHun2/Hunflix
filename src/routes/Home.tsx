@@ -55,14 +55,15 @@ const BTitleContainer = styled.div`
 
 const BTitle = styled.div<{ active: boolean }>`
   display: inline-block;
-  width: 35px;
-  height: 35px;
+  width:${(props)=>props.active ? "27px":"25px"};
+  height:${(props)=>props.active ? "27px":"25px"};
   margin-bottom:5px;
   margin-left:10px;
   cursor: pointer;
   border-radius: 50%;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 1);
   background-color: ${(props) =>
-    props.active ? "#e8e8e8c5" : "rgba(215, 215, 215, 0.2)"};
+    props.active ? "#f4f4f4c5" : "rgba(215, 215, 215, 0.2)"};
 `;
 
 
