@@ -23,7 +23,9 @@ https://hunflix.vercel.app/
     <br /> 
 <img src="https://github.com/KKKHun2/Hunflix/assets/105702862/94ccd7e6-1169-4d5a-8d29-1a6bfab06b8b.png" width="600" height="400">
     <br />
-
+배너 및 모달 배경 이미지 코드
+<br />
+ <img width="603" height="400"  alt="image" src="https://github.com/KKKHun2/Hunflix/assets/105702862/7e31c24d-5169-46e4-a62c-105f3bf3e125">
     
   <br />
  Home 화면에는 상영중,출시예정,인기 영화들로 3개의 슬라이드를 구성했습니다.
@@ -113,9 +115,7 @@ api코드로 데이터를 가져오는 코드
 <br />
  <img width="253" alt="image" src="https://github.com/KKKHun2/Hunflix/assets/105702862/3bb81856-973e-4940-ad07-5470bc516319">
 <br /> 
-배경이미지 코드
-<br />
- <img width="603" height="400"  alt="image" src="https://github.com/KKKHun2/Hunflix/assets/105702862/7e31c24d-5169-46e4-a62c-105f3bf3e125">
+
 
 
 
