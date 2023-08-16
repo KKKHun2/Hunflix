@@ -30,22 +30,19 @@ const Title = styled.div`
 const ArrowBtn = styled(motion.div)`
   position: absolute;
   top: 50%;
-  transform: translateY(-30%);
+  transform: translateY(-40%);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 5rem;
-  height: 5rem;
-  color: #fff;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.3);
-
+  width: 2.2rem;
+  height: 13rem;
+  color: ${(props)=>props.theme.color.text};
   transition: all 0.3s;
   z-index: 90;
   cursor: pointer;
   &:hover {
-    color: #000;
-    background-color: #fff;
+    background-color: ${(props)=> 
+    props.theme.color.text === "#FFFFFF" ? "#11111180" : "#f7faf680"};
   }
   &:blur {
     color: #fff;
@@ -55,7 +52,6 @@ const ArrowBtn = styled(motion.div)`
     width: 2.8rem;
     height: 2.8rem;
   }
-
 `;
 
 const LeftArrowBtn = styled(ArrowBtn)`
