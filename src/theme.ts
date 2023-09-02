@@ -6,7 +6,7 @@ export const darkTheme: DefaultTheme = {
     neutral: '#4F4F4F',
     point: '#E63946',
     primary: '#F1FAEE',
-    secondary: '#181921',
+    secondary: '#242424',
     text: '#FFFFFF',
   },
 };
