@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 const SearchWrap = styled.div`
   position: relative;
   width: 100%;
-  height: calc(100vh - 17.4rem);
+  height: calc(100vh - 15rem);
 `;
 
 const SearchForm = styled.form`
@@ -30,7 +30,7 @@ const SearchForm = styled.form`
 `;
 
 const Input = styled.input`
-  padding: 0.5rem 0.5rem;
+  padding: 0.4rem 0.3rem;
   color:  ${props => props.theme.color.text};
   font-size: 2rem;
   border-radius: 10px;
@@ -43,12 +43,12 @@ const InputSub = styled.p`
   display: inline-block;
   color:  ${props => props.theme.color.text};
   padding-left: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 450;
   vertical-align: bottom;
   .sub{
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 `;
 
