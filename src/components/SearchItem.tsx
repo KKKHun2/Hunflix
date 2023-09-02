@@ -56,16 +56,16 @@ const Info = styled(motion.div)`
 
 const NoSearch = styled.div`
   position: absolute;
-  top: 25%;
+  top: 20%;
   padding-top: 4rem;
   width: 100%;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 500;
   color:${(props)=>props.theme.color.text};
   .sub{
     margin-top:10px;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: 300;
   }
 `;
