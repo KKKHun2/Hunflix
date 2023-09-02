@@ -29,13 +29,13 @@ const Title = styled.div`
 
 const ArrowBtn = styled(motion.div)`
   position: absolute;
-  top: 50%;
+  top: 53%;
   transform: translateY(-40%);
   display: flex;
   justify-content: center;
   align-items: center;
   width: 2.2rem;
-  height: 13rem;
+  height: 14rem;
   color: ${(props)=>props.theme.color.text};
   transition: all 0.3s;
   z-index: 90;
