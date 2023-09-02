@@ -79,7 +79,7 @@ const Row = styled(motion.div)<{ gridcnt: number }>`
 const Box = styled(motion.div)<{ bgphoto: string | null; offset: number }>`
   display: block;
   float: left;
-  height: 200px;
+  height: 220px;
   background-image: url(${(props) => props.bgphoto});
   background-size: cover;
   background-position: center;
