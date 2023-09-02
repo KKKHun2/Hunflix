@@ -54,8 +54,8 @@ const Search = styled.form`
 `;
 const Circle = styled(motion.span)`
   position: absolute;
-  width: 5px;
-  height: 5px;
+  width: 35px;
+  height: 2px;
   border-radius: 5px;
   bottom: -5px;
   left: 0;
@@ -67,13 +67,12 @@ const Input = styled(motion.input)`
   transform-origin: right center;
   cursor:pointer;
   position: absolute;
-  right: 0px;
-  width:12rem;
-  padding: 7px 10px;
-  padding-left: 35px;
+  width:14rem;
+  padding: 10px 10px;
+  padding-left: 50px;
   z-index: -1;
   color: ${props => props.theme.color.text};
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   background-color: transparent;
   border-radius: 5px;
   border: 1px solid ${props => props.theme.color.text};
@@ -157,7 +156,7 @@ function Header() {
         <Search onSubmit={handleSubmit(onValid)}>
           <motion.svg
             onClick={toggleSearch}
-            animate={{ x: searchOpen ? -161 : 0 }}
+            animate={{ x: searchOpen ? 10 : 200 }}
             transition={{ type: "linear" }}
             fill="currentColor"
             viewBox="0 0 20 20"
