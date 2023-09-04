@@ -1,4 +1,5 @@
 import { AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import {
   PathMatch,
@@ -60,11 +61,15 @@ function Search() {
   const location = useLocation();
   const keyword = new URLSearchParams(location.search).get("keyword");
 
-  const { register, handleSubmit } = useForm<ISearchForm>({
+  const { register, handleSubmit,setValue } = useForm<ISearchForm>({
     defaultValues: {
       searchKeyword: keyword || "",
     },
   });
+ 
+  useEffect(() => {
+    setValue("searchKeyword", keyword || "");
+  }, [keyword, setValue]); 
 
   const navigate = useNavigate();
   const onValid = (data: ISearchForm) => {
