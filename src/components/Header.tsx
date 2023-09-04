@@ -108,14 +108,15 @@ function Header() {
   const { scrollY } = useScroll();
   const { handleChangeDarkMode, isDark } = useContext(DarkMode);
   const navigate = useNavigate();
-  const { register, handleSubmit } = useForm<IForm>();
+  const { register, handleSubmit,setValue } = useForm<IForm>();
   const onValid = (data: IForm) => {
     navigate(`/search?keyword=${data.keyword}`);
     setSearchOpen(false); 
     inputAnimation.start({ scaleX: 1 });
     setTimeout(() => {
       inputAnimation.start({ scaleX: 0 });
-    },);
+    });
+    setValue("keyword", "");
   };
   const toggleSearch = () => {
     if (searchOpen) {
