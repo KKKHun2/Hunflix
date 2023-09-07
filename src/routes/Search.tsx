@@ -52,7 +52,13 @@ const InputSub = styled.p`
     font-size: 1.9rem;
   }
 `;
-
+const ErrMessege = styled.div`
+  font-size:1rem;
+  margin-top:10px;
+  margin-left:5px;
+  font-weight: 600;
+  color:red;
+`
 interface ISearchForm {
   searchKeyword: string;
 }
@@ -61,11 +67,13 @@ function Search() {
   const location = useLocation();
   const keyword = new URLSearchParams(location.search).get("keyword");
 
-  const { register, handleSubmit,setValue } = useForm<ISearchForm>({
+  const { register, handleSubmit, setValue, formState: { errors } } = useForm<ISearchForm>({
     defaultValues: {
       searchKeyword: keyword || "",
     },
   });
+  
+  const { searchKeyword } = errors;
  
   useEffect(() => {
     setValue("searchKeyword", keyword || "");
@@ -77,12 +85,22 @@ function Search() {
   };
 
   const bigMatch: PathMatch<string> | null = useMatch(`search/:menuName/:id`);
-
+  
   return (
     <Wrapper>
         <SearchForm onSubmit={handleSubmit(onValid)}>
-          <Input type="text" {...register("searchKeyword")} />
-          <InputSub><span className="sub">"{keyword}"</span>으로 검색한 결과입니다.</InputSub>
+          <Input type="text" {...register("searchKeyword", { required: true, minLength: 2 })} />
+           {searchKeyword?.type === "required" && (
+              <ErrMessege>검색어를 입력해주세요.</ErrMessege>
+                )}
+                  {searchKeyword?.type === "minLength" && (
+               <ErrMessege>검색어는 최소 2자 이상이어야 합니다.</ErrMessege>
+                )}
+            {!searchKeyword && (
+            <InputSub>
+              <span className="sub">"{keyword}"</span>으로 검색한 결과입니다.
+             </InputSub>
+              )}
         </SearchForm>
       <SearchWrap>{keyword && <SearchItem keyword={keyword} />}</SearchWrap>
       <AnimatePresence>
