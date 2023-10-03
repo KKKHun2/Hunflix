@@ -13,8 +13,9 @@ import SearchItem from "../components/SearchItem";
 
 
 const Wrapper = styled.div`
-  padding: 11rem 6rem 0;
+  padding: 9rem 6rem 0;
   background-color: ${props => props.theme.color.secondary};
+  height: 195vh;
 `;
 
 const SearchWrap = styled.div`
