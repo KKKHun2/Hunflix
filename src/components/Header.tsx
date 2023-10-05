@@ -51,6 +51,7 @@ const Search = styled.form`
   svg {
     height: 25px;
   }
+  cursor:pointer;
 `;
 const Circle = styled(motion.span)`
   position: absolute;
@@ -88,6 +89,7 @@ const DarkModeButton = styled.button`
   background-color: ${props => props.theme.color.neutral};
   color: ${props => props.theme.color.text};
   transition: 0.2s ease;
+  cursor:pointer;
   :hover {
     scale: 1.2;
   }
