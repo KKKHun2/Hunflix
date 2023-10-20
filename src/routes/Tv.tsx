@@ -42,13 +42,23 @@ const Title = styled.div<{ active: boolean }>`
     props.active ? "rgba(255, 255, 255, 1)" : "rgba(233, 233, 233, 0.2)"};
   color: ${(props) =>
     props.active ? "#000000" : "rgba(255, 255, 255, 0.2)"};
+      @media (min-height:1100px) {
+    font-size: 1.3rem;
+}
 `;
 
 const RankTitle = styled.div`
   font-weight: 800;
   font-size: 1.5rem;
-  margin: 24px 0px 13px -60px;
+  align-items: center;
+  justify-content: center;
   color: ${(props)=>props.theme.color.text};
+  padding:20px;
+  @media (min-height:1100px) {
+    font-size: 2rem;
+    margin: 24px 0px 20px -10px;
+}
+
 `;
 
 const RankBox = styled.div<{ index: number }>`
@@ -59,6 +69,10 @@ const RankBox = styled.div<{ index: number }>`
   align-items: flex-start;
   border-radius: 15px;
   padding: 10px;
+  @media (min-height:1100px) {
+    width: 360px;
+    padding: 15px;
+}
 `;
 
 const BannerContent = styled.div`
@@ -68,7 +82,11 @@ const BannerContent = styled.div`
   background-color: rgba(255, 255, 255, 0.15);
   margin-top: 60px;
   border-radius: 20px;
-  height: 24rem;
+  height: 26rem;
+  @media (min-height:1100px) {
+    height: 34rem;
+    justify-content: center;
+}
 `;
 
 const SliderArea = styled.div`
