@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const Wrapper = styled.div`
   background-color: ${props => props.theme.color.background};
-  padding-bottom: 200px;
+  padding-bottom: 150px;
 `;
 const Loader = styled.div`
   height: 20vh;
