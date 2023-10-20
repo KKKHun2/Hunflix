@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import Sliders from "../components/Slider";
+import Sliders from "components/Slider";
 import styled from "styled-components";
 import { getPopularTvShows,getPopularWorldTvShows,getTopRatedTvShows, IGetMoviesResult, LIST_TYPE } from "../api";
 import { makeImagePath } from "../utils";
@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 const Wrapper = styled.div`
   background-color: ${props => props.theme.color.background};
-  padding-bottom: 200px;
+  padding-bottom: 150px;
 `;
 
 const Loader = styled.div`
