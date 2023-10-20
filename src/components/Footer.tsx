@@ -54,7 +54,7 @@ const TextColumn = styled.div`
 const StyledButton = styled.button`
   text-decoration: none;
   display: inline-block;
-  padding: 8px 10px;
+  padding: 10px 10px;
   color: #fff;
   transition: background-color 0.2s ease, color 0.2s ease;
   font-size: 0.8rem; 
@@ -76,13 +76,16 @@ const StyledButton = styled.button`
 
 const Logo = styled.div`
   text-decoration: none;
-  font-size: 25px; 
+  font-size: 35px; 
   font-weight: bold; 
   color:${props => props.theme.color.point};
   margin-right: 20px; 
   @media (max-width: 900px) {
     margin-right: 0; 
     margin-bottom: 5px; 
+  }
+  &:hover {
+    color:${props => props.theme.color.text};
   }
 `;
 
@@ -99,18 +102,18 @@ const Footer: React.FC = () => {
         <Logo as={Link} to= "/">HUNFLIX</Logo>
         <TextContainer>
           <TextColumn>
-            제작자: 김용훈  <br />
+            만든이: 김용훈  <br />
             번호: 010-5173-5524
           </TextColumn>
           <TextColumn>
-            1224kim2son@naver.com,  
+           이메일: 1224kim2son@naver.com,  
                 <br />
             Copyright HUNFLIX ©2023 All rights reserved
           </TextColumn>
         </TextContainer>
         <StyledButton as={Link} to="https://github.com/KKKHun2">
           <GitIcon />
-          GitHub로!
+          GitHub로 바로가기
         </StyledButton>
       </Container>
     </FooterWrapper>
