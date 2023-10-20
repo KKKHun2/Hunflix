@@ -8,6 +8,7 @@ import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme }  from "./theme";
 import { DarkMode } from "./DarkMode";
 import { useContext } from "react";
+import Footer from "./components/Footer";
 
 function App() {
   const client = new QueryClient();
@@ -25,6 +26,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home/:listType/:id" element={<Home />}></Route>
         </Routes>
+        <Footer />
       </Router>
       </ThemeProvider>
     </QueryClientProvider>
