@@ -33,6 +33,12 @@ const ModalBox = styled(motion.div)`
   background-color: ${(props) => props.theme.color.background};
   color: ${(props) => props.theme.color.text};
   z-index: 100;
+  @media (max-width:900px){
+    margin-top:40px;
+    width: 90%;
+    height: 70%;
+    
+  }
 `;
 
 const ModalCover = styled.div`
@@ -70,17 +76,26 @@ const ModalCoverTitle = styled.div`
 const ModalTitle = styled.h2`
   font-size: 3.3rem;
   color:#eee4e4;
+  @media (max-width:900px){
+    font-size: 2rem;
+  }
 `;
 
 const ModalSmallTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 800;
   color:#eee4e4;
+  @media (max-width:900px){
+    font-size: 1rem;
+  }
 `;
 
 const ModalContents = styled.div`
   position: relative;
   padding: 2rem 3rem 0 3rem;
+  @media (max-width:900px){
+    padding: 2rem;
+  }
 `;
 
 const ModalImage = styled.div<{ poster_path: string | null }>`
@@ -96,6 +111,7 @@ const ModalImage = styled.div<{ poster_path: string | null }>`
 
 const ModalInfoTitle = styled.div`
   display: none;
+
 `;
 
 const ModalTextCnt = styled.div`
@@ -142,7 +158,11 @@ const ModalTagLine = styled.h3`
     transform: translateY(-50%);
     background-color: #ccc;
   }
-
+@media (max-width:900px){
+    font-size: 1rem;
+    margin-top:-50px;
+    width: 15rem;
+  }
 
 `;
 
@@ -151,6 +171,11 @@ const ModalOverView = styled.p`
   font-size: 1.1rem;
   line-height: 2rem;
   font-weight: 300;
+  @media (max-width:900px) {
+    font-size: 1.1rem;
+  line-height: 1.4rem;
+  width: 250px;
+  }
 `;
 
 const ModalCategory = styled.ul`

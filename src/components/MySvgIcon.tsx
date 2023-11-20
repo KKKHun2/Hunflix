@@ -3,15 +3,19 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 const Logo = styled(motion.svg)`
-  width: 290px;
-  height: 85px;
+  width: 300px;
   left:0;
   top:0;
-  margin: -2px -45px -50px 0px;
+  margin-top:45px;
   fill: ${props => props.theme.color.point};
   path {
     stroke-width: 3px;
     stroke: white;
+  }
+  @media (max-width:900px){
+    width: 150px;
+  height: 200px;
+  margin: 30px 1px 0px -30px;
   }
 `;
 

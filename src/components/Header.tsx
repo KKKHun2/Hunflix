@@ -20,6 +20,9 @@ const Nav = styled(motion.nav)`
   background-color: ${props => props.theme.color.background};;
   color:${props => props.theme.color.text};
   z-index:100;
+  @media (max-width:900px){
+    width: 100%;
+  }
 `;
 const Col = styled.div`
   display: flex;

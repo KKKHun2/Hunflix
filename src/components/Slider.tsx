@@ -74,6 +74,9 @@ const Row = styled(motion.div)<{ gridcnt: number }>`
     display: block;
     clear: both;
   }
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
 
 const Box = styled(motion.div)<{ bgphoto: string | null; offset: number }>`
@@ -110,6 +113,9 @@ const Info = styled(motion.div)`
     text-align: center;
     font-size: 19px;
     font-weight: 650;
+  }
+  @media (max-width: 900px) {
+   margin-top:-30px;
   }
 `;
 
