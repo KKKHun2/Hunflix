@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { BsGithub } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
+
 const FooterWrapper = styled.div`
   background-color: ${props => props.theme.color.background};
   color: ${(props) => props.theme.color.text};
@@ -28,13 +29,13 @@ const TextContainer = styled.div`
   flex-direction: row;
   flex: 1;
   text-align: left;
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 1.1rem;
   flex-shrink: 0; 
   margin-left:100px;
   @media (max-width: 900px) {
     text-align: center;
-    font-size: 0.2rem; 
+    font-size: 0.7rem; 
     margin-left:0px;
   }
 `;
@@ -74,7 +75,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const Logo = styled.div`
+const LogoLink = styled(Link)`
   text-decoration: none;
   font-size: 35px; 
   font-weight: bold; 
@@ -96,10 +97,18 @@ const GitIcon = styled(BsGithub)`
 
 
 const Footer: React.FC = () => {
+  const handleLogoClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    event.preventDefault();
+    window.scrollTo(0, 0);
+    window.location.href = '/';
+  };
+
   return (
     <FooterWrapper>
       <Container>
-        <Logo as={Link} to= "/">HUNFLIX</Logo>
+      <LogoLink to="/" onClick={handleLogoClick}>
+        HUNFLIX
+        </LogoLink>
         <TextContainer>
           <TextColumn>
             만든이: 김용훈  <br />
