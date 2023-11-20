@@ -53,6 +53,9 @@ const Title = styled.div<{ active: boolean }>`
       @media (min-height:1100px) {
     font-size: 1.3rem;
 }
+@media (max-width: 900px) {
+font-size: 0.9rem;
+}
 `;
 
 const RankTitle = styled.div`
@@ -67,7 +70,7 @@ const RankTitle = styled.div`
     margin: 24px 0px 20px -10px;
 }
 @media (max-width: 900px) {
-
+display: none;
 }
 `;
 
@@ -83,6 +86,10 @@ const RankBox = styled.div<{ index: number }>`
     width: 360px;
     padding: 15px;
 }
+@media (max-width: 900px) {
+  width: 150px;
+  padding: 2px;
+}
 `;
 
 const BannerContent = styled.div`
@@ -96,6 +103,12 @@ const BannerContent = styled.div`
   @media (min-height:1100px) {
     height: 34rem;
     justify-content: center;
+}
+@media (max-width: 900px) {
+height: 14rem;
+width: 180px;
+margin-top:-40px;
+margin-left:180px;
 }
 `;
 
