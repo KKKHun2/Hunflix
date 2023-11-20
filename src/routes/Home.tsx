@@ -29,16 +29,31 @@ const Banner = styled.div<{ bgphoto: string }>`
   margin-top:50px;
   margin-bottom:30px;
   transition: background-image 0.2s ease;
+  @media (max-width: 900px) {
+  margin-top: 120px;
+  height: 33vh;
+  width:100%;
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  }
 `;
 const Title = styled.h2`
   font-size: 3.3rem;
   font-weight: 400;
+  @media (max-width:900px){
+    font-size: 2rem;
+    margin-top:100px;
+    margin-left: -20px;
+  }
 `;
 const Overview = styled.p`
   font-size: 1.5rem;
   margin-top: 40px;
   width: 40%;
   font-weight: 350;
+  @media (max-width:900px){
+    display: none;
+  }
 `;
 
 const SliderArea = styled.div`

@@ -27,6 +27,14 @@ const Banner = styled.div<{ bgphoto: string }>`
     url(${(props) => props.bgphoto});
   background-size: cover;
   transition: background-image 0.2s ease;
+  @media (max-width: 900px) {
+  margin-top: 120px;
+  height: 33vh;
+  width:100%;
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  margin-left: 0px;
+  }
 `;
 
 const Title = styled.div<{ active: boolean }>`
@@ -58,7 +66,9 @@ const RankTitle = styled.div`
     font-size: 2rem;
     margin: 24px 0px 20px -10px;
 }
+@media (max-width: 900px) {
 
+}
 `;
 
 const RankBox = styled.div<{ index: number }>`
