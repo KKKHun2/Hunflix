@@ -71,7 +71,7 @@ const StyledButton = styled.button`
     color: #8f88d7;
   }
   @media (max-width: 900px) {
-    display: none; 
+    margin-top: 10px;
   }
 `;
 

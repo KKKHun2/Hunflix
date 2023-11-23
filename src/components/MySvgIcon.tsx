@@ -12,7 +12,7 @@ const Logo = styled(motion.svg)`
     stroke-width: 3px;
     stroke: white;
   }
-  @media (max-width:900px){
+  @media (max-width:500px){
     width: 150px;
   height: 200px;
   margin: 30px 1px 0px -30px;

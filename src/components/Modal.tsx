@@ -33,7 +33,7 @@ const ModalBox = styled(motion.div)`
   background-color: ${(props) => props.theme.color.background};
   color: ${(props) => props.theme.color.text};
   z-index: 100;
-  @media (max-width:900px){
+  @media (max-width:500px){
     margin-top:40px;
     width: 90%;
     height: 70%;
@@ -76,7 +76,7 @@ const ModalCoverTitle = styled.div`
 const ModalTitle = styled.h2`
   font-size: 3.3rem;
   color:#eee4e4;
-  @media (max-width:900px){
+  @media (max-width:500px){
     font-size: 2rem;
   }
 `;
@@ -85,7 +85,7 @@ const ModalSmallTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 800;
   color:#eee4e4;
-  @media (max-width:900px){
+  @media (max-width:500px){
     font-size: 1rem;
   }
 `;
@@ -93,7 +93,7 @@ const ModalSmallTitle = styled.h3`
 const ModalContents = styled.div`
   position: relative;
   padding: 2rem 3rem 0 3rem;
-  @media (max-width:900px){
+  @media (max-width:500px){
     padding: 2rem;
   }
 `;
@@ -158,7 +158,7 @@ const ModalTagLine = styled.h3`
     transform: translateY(-50%);
     background-color: #ccc;
   }
-@media (max-width:900px){
+@media (max-width:500px){
     font-size: 1rem;
     margin-top:-50px;
     width: 15rem;
@@ -171,7 +171,7 @@ const ModalOverView = styled.p`
   font-size: 1.1rem;
   line-height: 2rem;
   font-weight: 300;
-  @media (max-width:900px) {
+  @media (max-width:500px) {
     font-size: 1.1rem;
   line-height: 1.4rem;
   width: 250px;

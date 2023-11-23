@@ -74,7 +74,7 @@ const Row = styled(motion.div)<{ gridcnt: number }>`
     display: block;
     clear: both;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 500px) {
     grid-template-columns: repeat(4, 1fr);
   }
 `;
@@ -114,7 +114,7 @@ const Info = styled(motion.div)`
     font-size: 19px;
     font-weight: 650;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 500px) {
    margin-top:-30px;
   }
 `;

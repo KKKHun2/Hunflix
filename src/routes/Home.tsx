@@ -29,7 +29,7 @@ const Banner = styled.div<{ bgphoto: string }>`
   margin-top:50px;
   margin-bottom:30px;
   transition: background-image 0.2s ease;
-  @media (max-width: 900px) {
+  @media (max-width: 500px) {
   margin-top: 120px;
   height: 33vh;
   width:100%;
@@ -40,7 +40,7 @@ const Banner = styled.div<{ bgphoto: string }>`
 const Title = styled.h2`
   font-size: 3.3rem;
   font-weight: 400;
-  @media (max-width:900px){
+  @media (max-width:500px){
     font-size: 2rem;
     margin-top:100px;
     margin-left: -20px;
@@ -51,7 +51,7 @@ const Overview = styled.p`
   margin-top: 40px;
   width: 40%;
   font-weight: 350;
-  @media (max-width:900px){
+  @media (max-width:500px){
     display: none;
   }
 `;
