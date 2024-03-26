@@ -41,8 +41,8 @@ const ArrowBtn = styled(motion.div)`
   z-index: 90;
   cursor: pointer;
   &:hover {
-    background-color: ${(props)=> 
-    props.theme.color.text === "#FFFFFF" ? "#11111180" : "#f7faf680"};
+    background-color: ${(props)=>
+    props.theme.color.text === "#FFFFFF" ? "#3a3a3aae" : "#f7faf6a7"};
   }
   &:blur {
     color: #fff;
@@ -139,14 +139,14 @@ const rowVariants = {
 const boxVariants = {
   normal: {
     scale: 1,
-    borderBottomLeftRadius: 0, 
-    borderBottomRightRadius: 0, 
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
   },
   hover: {
     scale: 1.2,
     y: -40,
-    borderBottomLeftRadius: 10, 
-    borderBottomRightRadius: 10, 
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
     transition: {
       type: "tween",
       delay: 0.3,
@@ -194,7 +194,7 @@ export default function Sliders({
 
 
     if (data) {
-      toggleLeaving(true); 
+      toggleLeaving(true);
       setIsRight(right);
       const totalMovies = data.results.length-1;
       const maxIndex = Math.floor(totalMovies / offset) - 1;

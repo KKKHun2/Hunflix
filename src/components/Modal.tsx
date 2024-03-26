@@ -37,7 +37,7 @@ const ModalBox = styled(motion.div)`
     margin-top:40px;
     width: 90%;
     height: 70%;
-    
+
   }
 `;
 
@@ -55,10 +55,14 @@ const ModalCover = styled.div`
     height: 2rem;
     vertical-align: middle;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.1s ease-in-out;
     &:hover {
       color: #181818;
       scale: 1.3;
+      background-color: ${(props) => props.theme.color.neutral};
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
     }
   }
 
@@ -199,7 +203,7 @@ const ItemTitle = styled.span`
   margin-right: 1rem;
   font-size: 1.8rem;
   font-weight: 700;
- 
+
 `;
 
 const ItemValue = styled.div`
@@ -333,7 +337,7 @@ export default function Modal({
                         size={22}
                         edit={false}
                         className="rating"
-                        
+
                       />
                       <span className="ratingValue">
                         ({data?.vote_average.toFixed(1)})

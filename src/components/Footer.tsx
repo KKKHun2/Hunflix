@@ -20,7 +20,7 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   @media (max-width: 900px) {
-    flex-direction: column; 
+    flex-direction: column;
   }
 `;
 
@@ -31,11 +31,11 @@ const TextContainer = styled.div`
   text-align: left;
   font-size: 1rem;
   line-height: 1.1rem;
-  flex-shrink: 0; 
+  flex-shrink: 0;
   margin-left:100px;
   @media (max-width: 900px) {
     text-align: center;
-    font-size: 0.7rem; 
+    font-size: 0.7rem;
     margin-left:0px;
   }
 `;
@@ -46,7 +46,7 @@ const TextColumn = styled.div`
   align-items: flex-start;
   margin-left: 20px;
   @media (max-width: 900px) {
-    align-items: center; 
+    align-items: center;
     text-align:left;
     margin-left:30px;
   }
@@ -58,13 +58,13 @@ const StyledButton = styled.button`
   padding: 10px 10px;
   color: #fff;
   transition: background-color 0.2s ease, color 0.2s ease;
-  font-size: 0.8rem; 
+  font-size: 0.8rem;
   font-weight: 400;
   background-color: #6f6f6f;
   border: 3px solid #000000;
   border-radius: 8px;
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   justify-content: center;
   &:hover {
     background-color: ${props => props.theme.color.background};
@@ -77,13 +77,13 @@ const StyledButton = styled.button`
 
 const LogoLink = styled(Link)`
   text-decoration: none;
-  font-size: 35px; 
-  font-weight: bold; 
+  font-size: 35px;
+  font-weight: bold;
   color:${props => props.theme.color.point};
-  margin-right: 20px; 
+  margin-right: 20px;
   @media (max-width: 900px) {
-    margin-right: 0; 
-    margin-bottom: 5px; 
+    margin-right: 0;
+    margin-bottom: 5px;
   }
   &:hover {
     color:${props => props.theme.color.text};
@@ -112,10 +112,10 @@ const Footer: React.FC = () => {
         <TextContainer>
           <TextColumn>
             만든이: 김용훈  <br />
-            번호: 010-5173-5524
+            연락처: 010-5173-5524
           </TextColumn>
           <TextColumn>
-           이메일: 1224kim2son@naver.com,  
+           이메일: 1224kim2son@naver.com,
                 <br />
             Copyright HUNFLIX ©2023 All rights reserved
           </TextColumn>
