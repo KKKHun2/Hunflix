@@ -111,11 +111,12 @@ const Footer: React.FC = () => {
         </LogoLink>
         <TextContainer>
           <TextColumn>
-            제작: KKKHun2
-            연락처: 010-5173-5524
+          Created by: KKKHun2
+          <br />
+          Contact: +82-10-5173-5524
           </TextColumn>
           <TextColumn>
-           이메일: 1224kim2son@naver.com,
+          Email: 1224kim2son@naver.com,
                 <br />
             Copyright HUNFLIX ©2023 All rights reserved
           </TextColumn>

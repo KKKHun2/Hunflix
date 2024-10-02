@@ -26,15 +26,15 @@ const Banner = styled.div<{ bgphoto: string }>`
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
     url(${(props) => props.bgphoto});
   background-size: cover;
-  margin-top:50px;
+  margin-top: 4rem;
   margin-bottom:30px;
   transition: background-image 0.2s ease;
   @media (max-width: 500px) {
   margin-top: 120px;
   height: 33vh;
   width:100%;
-  background-size: contain; 
-  background-repeat: no-repeat; 
+  background-size: contain;
+  background-repeat: no-repeat;
   }
 `;
 const Title = styled.h2`
@@ -49,7 +49,7 @@ const Title = styled.h2`
 const Overview = styled.p`
   font-size: 1.5rem;
   margin-top: 40px;
-  width: 40%;
+  width: 50%;
   font-weight: 350;
   @media (max-width:500px){
     display: none;
@@ -109,7 +109,7 @@ function Home() {
 
   const handleMouseEnter = (index: number) => {
     setHoveredIndex(index);
-    setActiveIndex(index); 
+    setActiveIndex(index);
   };
 
   const handleMouseLeave = () => {
@@ -128,7 +128,7 @@ function Home() {
             <Overview>
               {(nowPlayingMoviesList && nowPlayingMoviesList?.results[activeIndex].overview.length>190)
                 ? nowPlayingMoviesList?.results[activeIndex].overview.slice(0,190)+"...."
-                : nowPlayingMoviesList?.results[activeIndex].overview}               
+                : nowPlayingMoviesList?.results[activeIndex].overview}
             </Overview>
             <BTitleContainer>
           {nowPlayingMoviesList?.results.slice(0,5).map((show,index)=>(
@@ -138,11 +138,11 @@ function Home() {
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             />
-            
+
             ))}
             </BTitleContainer>
-          </Banner> 
-          
+          </Banner>
+
           <SliderArea>
             <Sliders
               data={nowPlayingMoviesList as IGetMoviesResult}
