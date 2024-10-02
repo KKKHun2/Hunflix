@@ -6,7 +6,7 @@ import { IGetSearchResult, searchData } from "../api";
 import { makeImagePath } from "../utils";
 
 const Row = styled.div`
-  position: absolute;
+  position: fixed;
   left: 0;
   margin: -0.3rem;
   margin-bottom: 3rem;

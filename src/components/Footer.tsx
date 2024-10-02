@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
         </LogoLink>
         <TextContainer>
           <TextColumn>
-            만든이: 김용훈  <br />
+            제작: KKKHun2
             연락처: 010-5173-5524
           </TextColumn>
           <TextColumn>

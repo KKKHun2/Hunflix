@@ -27,7 +27,7 @@ const Banner = styled.div<{ bgphoto: string }>`
     url(${(props) => props.bgphoto});
   background-size: cover;
   transition: background-image 0.2s ease;
-  @media (max-width: 900px) {
+  @media (max-width: 500px) {
   margin-top: 120px;
   height: 33vh;
   width:100%;
@@ -53,7 +53,7 @@ const Title = styled.div<{ active: boolean }>`
       @media (min-height:1100px) {
     font-size: 1.3rem;
 }
-@media (max-width: 900px) {
+@media (max-width: 500px) {
 font-size: 0.9rem;
 }
 `;
@@ -69,7 +69,7 @@ const RankTitle = styled.div`
     font-size: 2rem;
     margin: 24px 0px 20px -10px;
 }
-@media (max-width: 900px) {
+@media (max-width: 500px) {
 display: none;
 }
 `;
@@ -86,7 +86,7 @@ const RankBox = styled.div<{ index: number }>`
     width: 360px;
     padding: 15px;
 }
-@media (max-width: 900px) {
+@media (max-width: 500px) {
   width: 150px;
   padding: 2px;
 }
@@ -104,10 +104,10 @@ const BannerContent = styled.div`
     height: 34rem;
     justify-content: center;
 }
-@media (max-width: 900px) {
+@media (max-width: 500px) {
 height: 14rem;
 width: 180px;
-margin-top:-40px;
+margin-top:-0px;
 margin-left:180px;
 }
 `;

@@ -116,7 +116,7 @@ function Header() {
   const { register, handleSubmit,setValue } = useForm<IForm>();
   const onValid = (data: IForm) => {
     navigate(`/search?keyword=${data.keyword}`);
-    setSearchOpen(false); 
+    setSearchOpen(false);
     inputAnimation.start({ scaleX: 1 });
     setTimeout(() => {
       inputAnimation.start({ scaleX: 0 });
@@ -133,7 +133,7 @@ function Header() {
     }
     setSearchOpen((prev) => !prev);
   };
-  
+
   useMotionValueEvent(scrollY, "change", (y) => {
     if (y < 0.1) navAnimation.start("top");
     else navAnimation.start("scroll");
